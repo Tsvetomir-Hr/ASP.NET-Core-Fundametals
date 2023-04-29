@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using FirstASP.NET_Project.Models;
 
 namespace FirstASP.NET_Project.Data
 {
@@ -9,5 +10,6 @@ namespace FirstASP.NET_Project.Data
             : base(options)
         {
         }
+        public DbSet<FirstASP.NET_Project.Models.TestModel>? TestModel { get; set; }
     }
 }

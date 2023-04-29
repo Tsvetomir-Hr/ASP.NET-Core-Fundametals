@@ -30,7 +30,7 @@ namespace FirstASP.NET_Project.Controllers
         public IActionResult Test()
         {
             var model = new TestModel();
-            return View(model);
+            return View("TestNew",model);
         }
 
         [HttpPost]
