@@ -4,6 +4,7 @@ using System.Diagnostics;
 
 namespace FirstASP.NET_Project.Controllers
 {
+    [Route("Home")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -16,6 +17,25 @@ namespace FirstASP.NET_Project.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpGet]
+        [Route("randomTest")]
+        public IActionResult Test()
+        {
+            var model = new TestModel();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Test(TestModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Privacy()

@@ -1,0 +1,15 @@
+﻿@model TestModel
+
+<form asp-controller="Home" asp-action="Test" method="post" class="form-horizontal">
+    <label asp-for="@Model.Id"></label>
+    <input asp-for="@Model.Id" />
+    <span asp-validation-for="@Model.Id" class="text-danger"></span>
+    <label asp-for="@Model.Product"></label>
+    <input asp-for="@Model.Product" />
+    <span asp-validation-for="@Model.Product" class="text-danger"></span>
+    <input type="submit" value="Send" />
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
