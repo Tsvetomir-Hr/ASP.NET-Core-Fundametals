@@ -8,8 +8,8 @@ namespace MVC_Intro_Demo.Controllers
 {
     public class ProductsController : Controller
     {
-     
-        private IEnumerable<ProductViewModel> products = 
+
+        private IEnumerable<ProductViewModel> products =
             new List<ProductViewModel>()
             {
                 new ProductViewModel()
@@ -39,13 +39,23 @@ namespace MVC_Intro_Demo.Controllers
             };
 
         [ActionName("My-Products")]
-        public IActionResult All()
+        public IActionResult All(string productName)
         {
+            if (productName != null)
+            {
+
+                var foundProduct = products
+                    .Where(p => p.Name.ToLower()
+                    .Contains(productName.ToLower()));
+
+                return View(foundProduct); 
+            }
+
             return View(this.products);
         }
         public IActionResult ById(int id)
         {
-            var product = this.products.FirstOrDefault(p=>p.Id == id);
+            var product = this.products.FirstOrDefault(p => p.Id == id);
             if (product == null)
             {
                 return BadRequest();
@@ -69,7 +79,7 @@ namespace MVC_Intro_Demo.Controllers
                 text += "\r\n";
             }
             return Content(text);
-        } 
+        }
         public IActionResult AllAsTextFile()
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -79,7 +89,7 @@ namespace MVC_Intro_Demo.Controllers
             }
             Response.Headers.Add(HeaderNames.ContentDisposition, $"attachment;filename=products.txt");
 
-            return File(Encoding.UTF8.GetBytes(stringBuilder.ToString().TrimEnd()),"text/plain");
+            return File(Encoding.UTF8.GetBytes(stringBuilder.ToString().TrimEnd()), "text/plain");
         }
 
     }
