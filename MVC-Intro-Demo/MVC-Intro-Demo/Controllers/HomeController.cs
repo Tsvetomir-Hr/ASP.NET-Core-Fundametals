@@ -40,6 +40,7 @@ namespace MVC_Intro_Demo.Controllers
             ViewBag.Number = number;
             return View();
         }
+    
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
