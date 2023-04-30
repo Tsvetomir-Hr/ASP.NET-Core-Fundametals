@@ -38,6 +38,7 @@ namespace MVC_Intro_Demo.Controllers
                 }
             };
 
+        [ActionName("My-Products")]
         public IActionResult All()
         {
             return View(this.products);
@@ -80,5 +81,6 @@ namespace MVC_Intro_Demo.Controllers
 
             return File(Encoding.UTF8.GetBytes(stringBuilder.ToString().TrimEnd()),"text/plain");
         }
+
     }
 }
