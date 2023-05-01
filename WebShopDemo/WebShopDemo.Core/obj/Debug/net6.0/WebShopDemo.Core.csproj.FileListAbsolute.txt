@@ -1,0 +1,13 @@
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\bin\Debug\net6.0\Data\products.json
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\bin\Debug\net6.0\WebShopDemo.Core.deps.json
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\bin\Debug\net6.0\WebShopDemo.Core.dll
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\bin\Debug\net6.0\WebShopDemo.Core.pdb
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.csproj.AssemblyReference.cache
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.AssemblyInfoInputs.cache
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.AssemblyInfo.cs
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.csproj.CoreCompileInputs.cache
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.dll
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\refint\WebShopDemo.Core.dll
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.pdb
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\ref\WebShopDemo.Core.dll

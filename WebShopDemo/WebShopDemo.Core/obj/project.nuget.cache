@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "hwlFtse4kr608xft1l8/AUBszzssXEouXkfQOPF1qTFrIq1ftz7S21enFro+iehMmjP6GX00zF4aAanyjDB4ZA==",
+  "dgSpecHash": "InmhKkIp9sTWM1aGMxO9Wy0btyG/zEteN60yPamJxpCRQpUSljex1HA1xmF8+toCWzq6JzsILslBPxc99ySmpQ==",
   "success": true,
   "projectFilePath": "D:\\ASP.NET-Core-Fundametals\\WebShopDemo\\WebShopDemo.Core\\WebShopDemo.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\cveto\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\cveto\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\cveto\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\cveto\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

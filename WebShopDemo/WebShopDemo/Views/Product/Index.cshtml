@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ProductDto>
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Buy</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td>@p.Price</td>
+                <td>@p.Quantity</td>
+                <td><button class="btn btn-success">Buy</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
