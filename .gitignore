@@ -1,0 +1,13 @@
+obj
+bin
+.vs
+zip
+/XML Exercise/CarDealer/Data/Configuration.cs
+/JSON Exercise/ProductShop/ProductShop/Data/Configuration.cs
+/Exam Exercise/Theatre/Theatre/Data/Configuration.cs
+/Exam Exercise/Footballers/Footballers/Data/Configuration.cs
+/Exam Exercise/Artillery/Artillery/Data/Configuration.cs
+/Exam Exercise/VaporStore/VaporStore/Data/Configuration.cs
+/Exam Exercise/TeisterMask/TeisterMask/Data/Configuration.cs
+/Exam Exercise/Trucks/Trucks/Data/Configuration.cs
+/EF exercise/Linq Exercise/MusicHub/Data/Configuration.cs
