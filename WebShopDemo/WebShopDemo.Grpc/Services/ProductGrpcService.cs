@@ -14,13 +14,7 @@ namespace WebShopDemo.Grpc.Services
         }
         public override Task<ProductList> GetAll(Empty request, ServerCallContext context)
         {
-           ProductList result = new ProductList();
-            var products = this.productService.GetAll();
-
-            result.Items.AddRange(products.Select(p => new ProductItem()
-            {
-
-            }));
+           throw new NotImplementedException();
         }
     }
 }
