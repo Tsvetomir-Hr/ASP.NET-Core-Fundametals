@@ -11,3 +11,5 @@ D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebSho
 D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\refint\WebShopDemo.Core.dll
 D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.pdb
 D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\ref\WebShopDemo.Core.dll
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\bin\Debug\net6.0\WebShopDemo.Core.runtimeconfig.json
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo.Core\obj\Debug\net6.0\WebShopDemo.Core.genruntimeconfig.cache

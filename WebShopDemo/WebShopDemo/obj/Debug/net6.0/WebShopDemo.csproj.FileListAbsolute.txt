@@ -281,3 +281,6 @@ D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo\bin\Debug\net6.0\runtimes\un
 D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo\bin\Debug\net6.0\EFCore.NamingConventions.dll
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo\bin\Debug\net6.0\Npgsql.dll
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
