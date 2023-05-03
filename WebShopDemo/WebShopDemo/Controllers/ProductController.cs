@@ -23,5 +23,10 @@ namespace WebShopDemo.Controllers
             ViewData["Title"] = "Products";
             return View(products);
         }
+        public async Task<IActionResult> Add()
+        {
+            //TODO:
+            throw new NotImplementedException();
+        }
     }
 }
