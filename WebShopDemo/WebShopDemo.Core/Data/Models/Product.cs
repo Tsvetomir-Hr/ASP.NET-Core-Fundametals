@@ -25,5 +25,8 @@ namespace WebShopDemo.Core.Data.Models
 
         [Comment("Product quantity")]
         public int Quantity { get; set; }
+
+        [Comment("Product status")]
+        public bool IsActive { get; set; } = true;
     }
 }

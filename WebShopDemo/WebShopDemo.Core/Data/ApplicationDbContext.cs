@@ -15,6 +15,8 @@ namespace WebShopDemo.Core.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+     
+                
             base.OnModelCreating(builder);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

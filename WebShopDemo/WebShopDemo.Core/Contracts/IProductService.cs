@@ -17,7 +17,7 @@ namespace WebShopDemo.Core.Contracts
         /// <summary>
         /// Add new product
         /// </summary>
-        /// <param name="productDto">Product model </param>
+        /// <param name="productDto">Product model</param>
         /// <returns></returns>
         Task Add(ProductDto productDto);
     }

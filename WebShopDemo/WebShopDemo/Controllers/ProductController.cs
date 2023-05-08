@@ -42,6 +42,7 @@ namespace WebShopDemo.Controllers
             }
 
             await _productService.Add(model);
+
             return RedirectToAction(nameof(Index));
         }
     }
