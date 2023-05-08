@@ -50,6 +50,7 @@ namespace WebShopDemo.Core.Services
         public async Task<IEnumerable<ProductDto>> GetAll()
         {
             return await repo.AllReadonly<Product>()
+                .Where(p=>p.IsActive)
                 .Select(p=>new ProductDto()
                 {
                     Id = p.Id,
