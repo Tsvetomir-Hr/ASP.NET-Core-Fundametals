@@ -42,16 +42,33 @@ namespace WebShopDemo.Core.Services
             await repo.SaveChangesAsync();
 
         }
+        /// <summary>
+        /// deleting product from the product list
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task Delete(Guid id)
+        {
+            var product = await repo.All<Product>()
+                .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (product!=null)
+            {
+                product.IsActive = false;
+
+                await repo.SaveChangesAsync();
+            }
+        }
 
         /// <summary>
         /// Gets all products
         /// </summary>
         /// <returns>List of products</returns>
-        public async Task<IEnumerable<ProductDto>> GetAll() 
+        public async Task<IEnumerable<ProductDto>> GetAll()
         {
             return await repo.AllReadonly<Product>()
-                .Where(p=>p.IsActive)
-                .Select(p=>new ProductDto()
+                .Where(p => p.IsActive)
+                .Select(p => new ProductDto()
                 {
                     Id = p.Id,
                     Name = p.Name,
