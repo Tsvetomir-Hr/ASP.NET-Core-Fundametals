@@ -22,7 +22,7 @@
                 <td><button class="btn btn-success">Buy</button></td>
                 <td>
                     <form asp-action="Delete" asp-controller="Product" method="post">
-                        <input type="hidden" value="@p.Id" />
+                        <input name="id" type="hidden" value="@p.Id" />
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                 </td>
