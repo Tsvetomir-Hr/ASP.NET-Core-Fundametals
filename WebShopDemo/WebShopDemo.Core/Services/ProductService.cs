@@ -42,6 +42,24 @@ namespace WebShopDemo.Core.Services
             await repo.SaveChangesAsync();
 
         }
+
+        /// <summary>
+        /// Buying product of the list of products
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task Buy(Guid id)
+        {
+            var product = await repo.GetByIdAsync<Product>(id);
+
+            if (product!=null)
+            {
+                product.IsActive = false;
+
+                await repo.SaveChangesAsync();
+            }
+        }
+
         /// <summary>
         /// deleting product from the product list
         /// </summary>

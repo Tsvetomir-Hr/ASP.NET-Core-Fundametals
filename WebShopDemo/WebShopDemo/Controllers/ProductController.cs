@@ -53,5 +53,15 @@ namespace WebShopDemo.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+        [HttpPost]
+        public async Task<IActionResult> Buy([FromForm] string id)
+        {
+            Guid guidId = Guid.Parse(id);
+
+            await this._productService.Buy(guidId);
+
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }

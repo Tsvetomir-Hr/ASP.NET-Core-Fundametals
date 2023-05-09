@@ -7,7 +7,7 @@ namespace WebShopDemo.Core.Contracts
     /// </summary>
     public interface IProductService
     {
-       
+
         /// <summary>
         /// Gets all products
         /// </summary>
@@ -21,6 +21,18 @@ namespace WebShopDemo.Core.Contracts
         /// <returns></returns>
         Task Add(ProductDto productDto);
 
+        /// <summary>
+        /// Deleting product from the list of products
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Task Delete(Guid id);
+
+        /// <summary>
+        /// Buying product of the list of products
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task Buy(Guid id);
     }
 }
