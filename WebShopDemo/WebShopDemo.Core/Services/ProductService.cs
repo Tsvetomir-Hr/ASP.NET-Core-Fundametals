@@ -47,7 +47,7 @@ namespace WebShopDemo.Core.Services
         /// Gets all products
         /// </summary>
         /// <returns>List of products</returns>
-        public async Task<IEnumerable<ProductDto>> GetAll()
+        public async Task<IEnumerable<ProductDto>> GetAll() 
         {
             return await repo.AllReadonly<Product>()
                 .Where(p=>p.IsActive)
