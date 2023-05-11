@@ -1,0 +1,25 @@
+﻿namespace ForumApp.Constants
+{
+    /// <summary>
+    /// Data layer constants
+    /// </summary>
+    public class DataConstants
+    {
+        /// <summary>
+        /// Post constants
+        /// </summary>
+        public static class Post
+        {
+            /// <summary>
+            /// Max title length
+            /// </summary>
+            public const int TitleMaxLength = 50;
+
+            /// <summary>
+            /// Max length context
+            /// </summary>
+            public const int ContextMaxLength = 1500;
+
+        }
+    }
+}

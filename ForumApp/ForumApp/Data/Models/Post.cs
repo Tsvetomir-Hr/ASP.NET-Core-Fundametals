@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
-
+using static ForumApp.Constants.DataConstants.Post;
 namespace ForumApp.Data.Models
 {
     [Comment("Published posts")]
@@ -12,10 +12,12 @@ namespace ForumApp.Data.Models
 
         [Comment("Post title")]
         [Required]
-        public string Title { get; set; }
+        [MaxLength(TitleMaxLength)]
+        public string Title { get; set; } = null!;
 
         [Comment("Post content")]
         [Required]
-        public string Content { get; set; }
+        [MaxLength(ContextMaxLength)]
+        public string Content { get; set; } = null!;
     }
 }
