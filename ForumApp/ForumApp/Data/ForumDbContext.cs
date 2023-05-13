@@ -21,7 +21,12 @@ namespace ForumApp.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration<Post>(new PostConfiguration());
+            modelBuilder.ApplyConfiguration(new PostConfiguration());
+
+            modelBuilder.Entity<Post>()
+                .Property(p => p.IsDeleted)
+                .HasDefaultValue(false);
+
             base.OnModelCreating(modelBuilder);
         }
     }
