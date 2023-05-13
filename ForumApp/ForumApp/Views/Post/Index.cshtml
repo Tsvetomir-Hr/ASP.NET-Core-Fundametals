@@ -23,10 +23,10 @@
                         <p class="card-text">@post.Content</p>
                         <div class="d-grid gap-2">
                             <a asp-controller="Post" asp-action="Edit" asp-route-id="@post.Id" class="btn btn-warning">Edit</a>
-                            <form class="mt-2" asp-controller="Post" asp-action="Delete" asp-route-id="@post.Id">
+                            <form id="123" class="mt-2" asp-controller="Post" asp-action="Delete" asp-route-id="@post.Id">
                                 <div class="d-grid gap-2">
                                     <input type="submit" value="Delete" class="btn btn-danger mb-2"
-                                           onclick="return confirm('Are you sure u want to delete : @post.Title')" />
+                                           onclick="return myConfirm()" />
                                 </div>
                             </form>
                         </div>
@@ -40,4 +40,30 @@
 else
 {
     <p class="text-center">No posts yet!</p>
+}
+
+@section Scripts{
+    <script>
+        const myConfirm = function (e) {
+
+            e = e || window.event;
+            e.preventDefault();
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result, e) => {
+                if (result.isConfirmed) {
+                    document.getElementById(123).submit();
+                    return true;
+                }
+                return false;
+            })
+        }
+    </script>
+
 }
