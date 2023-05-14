@@ -22,6 +22,15 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IRepository, Repository>();
 
+builder.Services.AddDistributedMemoryCache(); // not used in production.We save session not on the machine.
+builder.Services.AddSession(options =>
+{
+    //time the session is saved when it is not used.
+    options.IdleTimeout = TimeSpan.FromMinutes(5);
+
+    //to secure the cookie 
+    options.Cookie.HttpOnly = true;
+});
 
 
 var app = builder.Build();
@@ -45,6 +54,9 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+//now app will send session cookie(where we save session state not user information)
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

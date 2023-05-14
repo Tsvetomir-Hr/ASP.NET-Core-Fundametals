@@ -15,16 +15,17 @@ namespace WebShopDemo.Controllers
 
         public IActionResult Index()
         {
-            if (TempData.ContainsKey("LastAccessTime"))
-            {
-                return Ok(TempData["LastAccessTime"]);
-            }
-            TempData["LastAccessTime"] = DateTime.Now;
+            this.HttpContext.Session.SetString("Name", "Pesho");
             return View();
         }
 
         public IActionResult Privacy()
         {
+            string? name = this.HttpContext.Session.GetString("Name");
+            if (!string.IsNullOrEmpty(name))
+            {
+                return Ok(name);
+            }
             return View();
         }
 
