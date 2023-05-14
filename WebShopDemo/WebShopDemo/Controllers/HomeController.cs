@@ -15,6 +15,11 @@ namespace WebShopDemo.Controllers
 
         public IActionResult Index()
         {
+            if (TempData.ContainsKey("LastAccessTime"))
+            {
+                return Ok(TempData["LastAccessTime"]);
+            }
+            TempData["LastAccessTime"] = DateTime.Now;
             return View();
         }
 
