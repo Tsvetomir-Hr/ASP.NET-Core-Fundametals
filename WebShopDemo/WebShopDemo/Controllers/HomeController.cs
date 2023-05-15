@@ -21,11 +21,7 @@ namespace WebShopDemo.Controllers
 
         public IActionResult Privacy()
         {
-            string? name = this.HttpContext.Session.GetString("Name");
-            if (!string.IsNullOrEmpty(name))
-            {
-                return Ok(name);
-            }
+          
             return View();
         }
 
