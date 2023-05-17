@@ -284,3 +284,4 @@ D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo\obj\Debug\net6.0\refint\WebS
 D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo\obj\Debug\net6.0\WebShopDemo.pdb
 D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo\obj\Debug\net6.0\WebShopDemo.genruntimeconfig.cache
 D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo\obj\Debug\net6.0\ref\WebShopDemo.dll
+D:\ASP.NET-Core-Fundametals\WebShopDemo\WebShopDemo\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
