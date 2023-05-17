@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using WebShopDemo.Core.Contracts;
 using WebShopDemo.Core.Data;
 using WebShopDemo.Core.Data.Common;
+using WebShopDemo.Core.Data.Models.Account;
 using WebShopDemo.Core.Services;
 
 
@@ -16,10 +17,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 {
     options.SignIn.RequireConfirmedAccount = true;
-    //options.SignIn.RequireConfirmedEmail = true;
+    options.SignIn.RequireConfirmedEmail = true;
     options.Password.RequireNonAlphanumeric = true;
     options.Password.RequiredLength = 6;
 
@@ -28,6 +29,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
 })
  .AddEntityFrameworkStores<ApplicationDbContext>();
+ 
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IProductService, ProductService>();
