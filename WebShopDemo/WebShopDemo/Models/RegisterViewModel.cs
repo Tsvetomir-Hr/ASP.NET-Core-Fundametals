@@ -15,11 +15,11 @@ namespace WebShopDemo.Models
         public string PasswordRepeat { get; set; } = null!;
 
         [Required]
-        [StringLength(30, MinimumLength = 2)]
+        [StringLength(20, MinimumLength = 2)]
         public string FirstName { get; set; } = null!;
 
         [Required]
-        [StringLength(30, MinimumLength = 2)]
+        [StringLength(20, MinimumLength = 2)]
         public string LastName { get; set; } = null!;
     }
 }
