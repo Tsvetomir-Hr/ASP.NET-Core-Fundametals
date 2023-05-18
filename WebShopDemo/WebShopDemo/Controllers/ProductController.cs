@@ -21,6 +21,8 @@ namespace WebShopDemo.Controllers
         /// List all products
         /// </summary>
         /// <returns></returns>
+        /// 
+        [AllowAnonymous] // now index will be allowed to not logged in user but they can't modify the items in the collection.
         public async Task<IActionResult> Index()
         {
             var products = await this._productService.GetAll();
