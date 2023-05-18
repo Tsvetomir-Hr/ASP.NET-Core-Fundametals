@@ -40,22 +40,61 @@ namespace WebShopDemo.Controllers
                 UserName = model.Email
             };
             var result = await userManager.CreateAsync(user, model.Password);
+
             if (result.Succeeded)
             {
                 await this.signInManager.SignInAsync(user, isPersistent: false);
 
                 return RedirectToAction("Index", "Home");
             }
-            ModelState.AddModelError(null, "Something went wrong!");
+            foreach (var item in result.Errors)
+            {
+                ModelState.AddModelError("", item.Description);
+            }
+
             return View(model);
         }
-        public async Task<IActionResult> Login(string? returnUrl = null)
+        [HttpGet]
+        public IActionResult Login(string? returnUrl = null)
         {
-            return View();
+            var model = new LoginViewModel()
+            {
+                ReturnUrl = returnUrl,
+            };
+
+            return View(model);
         }
-        public async Task<IActionResult> Logout(string? returnUrl = null)
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var user = await userManager.FindByNameAsync(model.Email);
+            if (user == null)
+            {
+                var result = await signInManager.PasswordSignInAsync(user, model.Password, false, false);
+
+                if (result.Succeeded)
+                {
+                    if (model.ReturnUrl!=null)
+                    {
+
+                        return Redirect(model.ReturnUrl);
+                    }
+                    return RedirectToAction("Index", "Home");
+                }
+
+            }
+            ModelState.AddModelError("","Invalid Login");
+            return View(model);
+        }
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }
