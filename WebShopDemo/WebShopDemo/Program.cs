@@ -36,6 +36,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
  
 
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IProductService, ProductService>();
