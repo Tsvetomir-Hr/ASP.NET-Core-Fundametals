@@ -7,18 +7,23 @@ using WebShopDemo.Models;
 
 namespace WebShopDemo.Controllers
 {
-  
+
     public class AccountController : BaseController
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
+        private readonly RoleManager<IdentityRole> roleManager;
 
-        public AccountController(UserManager<ApplicationUser> _userManager, SignInManager<ApplicationUser> _signInManager)
+        public AccountController(
+            UserManager<ApplicationUser> _userManager,
+            SignInManager<ApplicationUser> _signInManager,
+            RoleManager<IdentityRole> _roleManager)
         {
-            this.userManager = _userManager;
-            this.signInManager = _signInManager;
-
+            userManager = _userManager;
+            signInManager = _signInManager;
+            roleManager = _roleManager;
         }
+
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Register()
@@ -86,13 +91,13 @@ namespace WebShopDemo.Controllers
             var user = await userManager.FindByNameAsync(model.Email);
             if (user != null)
             {
-               
+
 
                 var result = await signInManager.PasswordSignInAsync(user, model.Password, false, false);
 
                 if (result.Succeeded)
                 {
-                    if (model.ReturnUrl!=null)
+                    if (model.ReturnUrl != null)
                     {
 
                         return Redirect(model.ReturnUrl);
@@ -101,7 +106,7 @@ namespace WebShopDemo.Controllers
                 }
 
             }
-            ModelState.AddModelError("","Invalid Login");
+            ModelState.AddModelError("", "Invalid Login");
             return View(model);
         }
 

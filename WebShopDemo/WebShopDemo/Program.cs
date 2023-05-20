@@ -28,13 +28,14 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
 })
+ .AddRoles<IdentityRole>()
  .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Account/Login";
 });
- 
+
 
 
 builder.Services.AddControllersWithViews();
