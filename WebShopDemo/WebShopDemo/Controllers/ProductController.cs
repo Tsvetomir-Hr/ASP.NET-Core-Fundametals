@@ -54,10 +54,6 @@ namespace WebShopDemo.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete([FromForm] string id)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
             Guid idGuid = Guid.Parse(id);
             await _productService.Delete(idGuid);
 
@@ -66,10 +62,6 @@ namespace WebShopDemo.Controllers
         [HttpPost]
         public async Task<IActionResult> Buy([FromForm] string id)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
             Guid guidId = Guid.Parse(id);
 
             await this._productService.Buy(guidId);
