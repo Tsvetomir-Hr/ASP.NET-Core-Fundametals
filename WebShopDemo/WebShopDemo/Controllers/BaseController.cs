@@ -1,22 +1,29 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using WebShopDemo.Core.Constants;
 
 namespace WebShopDemo.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Authorize]
     public class BaseController : Controller
     {
-        public string UserFirstName 
+        /// <summary>
+        /// property that return user firstName from the claims
+        /// </summary>
+        public string UserFirstName
         {
             get
             {
                 string firtsName = string.Empty;
 
-                if (User != null && User.HasClaim(c=>c.Type=="first_name"))
+                if (User?.Identity?.IsAuthenticated ?? false && User.HasClaim(c => c.Type == ClaimTypeConstants.FirstName))
                 {
                     firtsName = User.Claims
-                        .FirstOrDefault(c=>c.Type=="first_name")
+                        .FirstOrDefault(c => c.Type == ClaimTypeConstants.FirstName)
                         ?.Value ?? firtsName;
                 }
                 return firtsName;
@@ -28,7 +35,11 @@ namespace WebShopDemo.Controllers
         /// <param name="context"></param>
         public override void OnActionExecuted(ActionExecutedContext context)
         {
-            ViewBag.UserFirstName = UserFirstName;
+            if (User?.Identity?.IsAuthenticated ?? false)
+            {
+
+                ViewBag.UserFirstName = UserFirstName;
+            }
 
             base.OnActionExecuted(context);
 

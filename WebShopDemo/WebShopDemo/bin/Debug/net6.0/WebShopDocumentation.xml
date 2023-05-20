@@ -4,6 +4,16 @@
         <name>WebShopDemo</name>
     </assembly>
     <members>
+        <member name="T:WebShopDemo.Controllers.BaseController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WebShopDemo.Controllers.BaseController.UserFirstName">
+            <summary>
+            property that return user firstName from the claims
+            </summary>
+        </member>
         <member name="M:WebShopDemo.Controllers.BaseController.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
             <summary>
             This method will be executed after every action and will fill the view bag with user first name.

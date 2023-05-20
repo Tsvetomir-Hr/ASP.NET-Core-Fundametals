@@ -22,7 +22,8 @@ namespace WebShopDemo.Controllers
         /// </summary>
         /// <returns></returns>
         /// 
-      // now index will be allowed to not logged in user but they can't modify the items in the collection.
+        // now index will be allowed to not logged in user but they can't modify the items in the collection.
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var products = await this._productService.GetAll();
@@ -53,6 +54,10 @@ namespace WebShopDemo.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete([FromForm] string id)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
             Guid idGuid = Guid.Parse(id);
             await _productService.Delete(idGuid);
 
@@ -61,6 +66,10 @@ namespace WebShopDemo.Controllers
         [HttpPost]
         public async Task<IActionResult> Buy([FromForm] string id)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
             Guid guidId = Guid.Parse(id);
 
             await this._productService.Buy(guidId);
