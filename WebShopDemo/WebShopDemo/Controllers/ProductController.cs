@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebShopDemo.Core.Constants;
 using WebShopDemo.Core.Contracts;
 using WebShopDemo.Core.Models;
 
@@ -31,6 +32,7 @@ namespace WebShopDemo.Controllers
             return View(products);
         }
         [HttpGet]
+        [Authorize(Roles  = $"{RoleConstants.Manager}, {RoleConstants.Supervisor}")]
         public IActionResult Add()
         {
             var model = new ProductDto();
@@ -39,6 +41,7 @@ namespace WebShopDemo.Controllers
             return View(model);
         }
         [HttpPost]
+        [Authorize(Roles = $"{RoleConstants.Manager}, {RoleConstants.Supervisor}")]
         public async Task<IActionResult> Add(ProductDto model)
         {
             ViewData["Title"] = "Add new product";
@@ -52,6 +55,8 @@ namespace WebShopDemo.Controllers
             return RedirectToAction(nameof(Index));
         }
         [HttpPost]
+        [Authorize(Roles =RoleConstants.Supervisor)]
+
         public async Task<IActionResult> Delete([FromForm] string id)
         {
             Guid idGuid = Guid.Parse(id);
@@ -60,6 +65,7 @@ namespace WebShopDemo.Controllers
             return RedirectToAction(nameof(Index));
         }
         [HttpPost]
+        [Authorize(Roles = RoleConstants.Manager)]
         public async Task<IActionResult> Buy([FromForm] string id)
         {
             Guid guidId = Guid.Parse(id);

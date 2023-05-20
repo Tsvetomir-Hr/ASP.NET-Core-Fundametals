@@ -116,5 +116,35 @@ namespace WebShopDemo.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+        /// <summary>
+        /// Methods that creates roles
+        /// </summary>
+        /// <returns></returns>
+        [AllowAnonymous]
+        public async Task<IActionResult> CreateRoles()
+        {
+            await roleManager.CreateAsync(new IdentityRole(RoleConstants.Manager));
+            await roleManager.CreateAsync(new IdentityRole(RoleConstants.Supervisor));
+            await roleManager.CreateAsync(new IdentityRole(RoleConstants.Administrator));
+
+            return RedirectToAction("Index", "Home");
+        }
+        /// <summary>
+        /// add roles to the user.This method is only for the demo.
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IActionResult> AddUsersToRoles()
+        {
+            string email1 = "ico@abv.bg";
+            string email2 = "Stoyan@abv.bg";
+
+            var user = await userManager.FindByEmailAsync(email1);
+            var user2 = await userManager.FindByEmailAsync(email2);
+
+            await userManager.AddToRoleAsync(user,RoleConstants.Manager);
+            await userManager.AddToRolesAsync(user2,new string[] {RoleConstants.Supervisor,RoleConstants.Administrator});
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

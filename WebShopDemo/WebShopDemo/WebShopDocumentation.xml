@@ -4,6 +4,18 @@
         <name>WebShopDemo</name>
     </assembly>
     <members>
+        <member name="M:WebShopDemo.Controllers.AccountController.CreateRoles">
+            <summary>
+            Methods that creates roles
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebShopDemo.Controllers.AccountController.AddUsersToRoles">
+            <summary>
+            add roles to the user.This method is only for the demo.
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:WebShopDemo.Controllers.BaseController">
             <summary>
             
