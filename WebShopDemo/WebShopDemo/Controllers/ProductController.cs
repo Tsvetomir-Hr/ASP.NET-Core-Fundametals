@@ -55,7 +55,7 @@ namespace WebShopDemo.Controllers
             return RedirectToAction(nameof(Index));
         }
         [HttpPost]
-        [Authorize(Roles =RoleConstants.Supervisor)]
+        [Authorize(Policy = "CanDeleteProduct")]
 
         public async Task<IActionResult> Delete([FromForm] string id)
         {
