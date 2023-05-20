@@ -4,6 +4,12 @@
         <name>WebShopDemo</name>
     </assembly>
     <members>
+        <member name="M:WebShopDemo.Controllers.BaseController.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            This method will be executed after every action and will fill the view bag with user first name.
+            </summary>
+            <param name="context"></param>
+        </member>
         <member name="T:WebShopDemo.Controllers.ProductController">
             <summary>
             Web shop products

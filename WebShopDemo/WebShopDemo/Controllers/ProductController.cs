@@ -9,8 +9,8 @@ namespace WebShopDemo.Controllers
     /// Web shop products
     /// </summary>
     /// 
-    [Authorize] // used to autorize only to logged in users to see products page 
-    public class ProductController : Controller
+     // used to autorize only to logged in users to see products page 
+    public class ProductController : BaseController
     {
         private readonly IProductService _productService;
         public ProductController(IProductService productService)
@@ -22,7 +22,7 @@ namespace WebShopDemo.Controllers
         /// </summary>
         /// <returns></returns>
         /// 
-        [AllowAnonymous] // now index will be allowed to not logged in user but they can't modify the items in the collection.
+      // now index will be allowed to not logged in user but they can't modify the items in the collection.
         public async Task<IActionResult> Index()
         {
             var products = await this._productService.GetAll();

@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using WebShopDemo.Core.Constants;
 using WebShopDemo.Core.Data.Models.Account;
 using WebShopDemo.Models;
 
 namespace WebShopDemo.Controllers
 {
-    public class AccountController : Controller
+  
+    public class AccountController : BaseController
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
@@ -17,6 +20,7 @@ namespace WebShopDemo.Controllers
 
         }
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Register()
         {
             var model = new RegisterViewModel();
@@ -24,6 +28,7 @@ namespace WebShopDemo.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (!ModelState.IsValid)
@@ -39,7 +44,11 @@ namespace WebShopDemo.Controllers
                 LastName = model.LastName,
                 UserName = model.Email
             };
+
             var result = await userManager.CreateAsync(user, model.Password);
+
+            await userManager
+                   .AddClaimAsync(user, new System.Security.Claims.Claim(ClaimTypeConstants.FirstName, user.FirstName ?? user.Email));
 
             if (result.Succeeded)
             {
@@ -55,6 +64,7 @@ namespace WebShopDemo.Controllers
             return View(model);
         }
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Login(string? returnUrl = null)
         {
             var model = new LoginViewModel()
@@ -65,15 +75,19 @@ namespace WebShopDemo.Controllers
             return View(model);
         }
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
+
             var user = await userManager.FindByNameAsync(model.Email);
-            if (user == null)
+            if (user != null)
             {
+               
+
                 var result = await signInManager.PasswordSignInAsync(user, model.Password, false, false);
 
                 if (result.Succeeded)
@@ -90,6 +104,7 @@ namespace WebShopDemo.Controllers
             ModelState.AddModelError("","Invalid Login");
             return View(model);
         }
+
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
