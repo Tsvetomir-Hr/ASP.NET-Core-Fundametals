@@ -142,7 +142,7 @@ namespace WebShopDemo.Controllers
             var user2 = await userManager.FindByEmailAsync(email2);
 
             await userManager.AddToRoleAsync(user,RoleConstants.Manager);
-            await userManager.AddToRolesAsync(user2,new string[] {RoleConstants.Supervisor,RoleConstants.Administrator});
+            await userManager.AddToRolesAsync(user2,new string[] {RoleConstants.Supervisor,RoleConstants.Manager});
 
             return RedirectToAction("Index", "Home");
         }

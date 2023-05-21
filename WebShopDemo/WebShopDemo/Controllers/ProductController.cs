@@ -54,9 +54,9 @@ namespace WebShopDemo.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
         [HttpPost]
         [Authorize(Policy = "CanDeleteProduct")]
-
         public async Task<IActionResult> Delete([FromForm] string id)
         {
             Guid idGuid = Guid.Parse(id);
