@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TaskBoardApp.Web</name>
+    </assembly>
+    <members>
+        <member name="T:TaskBoardApp.Web.Data.DataConstants">
+            <summary>
+            Data constants for the entities
+            </summary>
+        </member>
+        <member name="F:TaskBoardApp.Web.Data.DataConstants.UserFirstNameMaxLength">
+            <summary>
+            User FirstName length
+            </summary>
+        </member>
+        <member name="F:TaskBoardApp.Web.Data.DataConstants.UserLastNameMaxLength">
+            <summary>
+            User LastName length
+            </summary>
+        </member>
+        <member name="F:TaskBoardApp.Web.Data.DataConstants.TaskTitleMinLength">
+            <summary>
+            Task title min length
+            </summary>
+        </member>
+        <member name="F:TaskBoardApp.Web.Data.DataConstants.TaskTitleMaxLength">
+            <summary>
+            Task title max length
+            </summary>
+        </member>
+        <member name="F:TaskBoardApp.Web.Data.DataConstants.TaskDescriptionMinLength">
+            <summary>
+            Task description min length
+            </summary>
+        </member>
+        <member name="F:TaskBoardApp.Web.Data.DataConstants.TaskDescriptionMaxLength">
+            <summary>
+            Task description max length
+            </summary>
+        </member>
+        <member name="F:TaskBoardApp.Web.Data.DataConstants.BoardNameMinLength">
+            <summary>
+            Board name min length
+            </summary>
+        </member>
+        <member name="F:TaskBoardApp.Web.Data.DataConstants.BoardNameMaxLength">
+            <summary>
+            BoardName max length
+            </summary>
+        </member>
+        <member name="T:TaskBoardApp.Web.Data.Entities.ApplicationUser">
+            <summary>
+            User entity
+            </summary>
+        </member>
+        <member name="P:TaskBoardApp.Web.Data.Entities.ApplicationUser.FirstName">
+            <summary>
+            User FirstName
+            </summary>
+        </member>
+        <member name="P:TaskBoardApp.Web.Data.Entities.ApplicationUser.LastName">
+            <summary>
+            User LastName
+            </summary>
+        </member>
+        <member name="T:TaskBoardApp.Web.Data.Entities.Board">
+            <summary>
+            Board entity
+            </summary>
+        </member>
+        <member name="M:TaskBoardApp.Web.Data.Entities.Board.#ctor">
+            <summary>
+            Initializing the collection of task as Hashset
+            </summary>
+        </member>
+        <member name="P:TaskBoardApp.Web.Data.Entities.Board.Id">
+            <summary>
+            Board identifier
+            </summary>
+        </member>
+        <member name="P:TaskBoardApp.Web.Data.Entities.Board.Name">
+            <summary>
+            Board name
+            </summary>
+        </member>
+        <member name="P:TaskBoardApp.Web.Data.Entities.Board.Tasks">
+            <summary>
+            Collection of tasks to this board.
+            </summary>
+        </member>
+        <member name="T:TaskBoardApp.Web.Data.Entities.Task">
+            <summary>
+            Task
+            </summary>
+        </member>
+        <member name="P:TaskBoardApp.Web.Data.Entities.Task.Id">
+            <summary>
+            Task identifier
+            </summary>
+        </member>
+        <member name="P:TaskBoardApp.Web.Data.Entities.Task.Title">
+            <summary>
+            Task title
+            </summary>
+        </member>
+        <member name="P:TaskBoardApp.Web.Data.Entities.Task.Description">
+            <summary>
+            Task description
+            </summary>
+        </member>
+        <member name="P:TaskBoardApp.Web.Data.Entities.Task.CreatedOn">
+            <summary>
+            Date and time when is creted the task
+            </summary>
+        </member>
+        <member name="P:TaskBoardApp.Web.Data.Entities.Task.BoardId">
+            <summary>
+            Foreign key to the boards table
+            </summary>
+        </member>
+        <member name="P:TaskBoardApp.Web.Data.Entities.Task.Board">
+            <summary>
+            Board entitiy
+            </summary>
+        </member>
+        <member name="P:TaskBoardApp.Web.Data.Entities.Task.OwnerId">
+            <summary>
+            Foreign key tot he owners table
+            </summary>
+        </member>
+        <member name="P:TaskBoardApp.Web.Data.Entities.Task.Owner">
+            <summary>
+            Owner entity
+            </summary>
+        </member>
+        <member name="T:TaskBoardApp.Web.Data.TaskBoardAppDbContext">
+            <summary>
+            App db context
+            </summary>
+        </member>
+        <member name="M:TaskBoardApp.Web.Data.TaskBoardAppDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{TaskBoardApp.Web.Data.TaskBoardAppDbContext})">
+            <summary>
+            Constructor for configuring the dbContext
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="P:TaskBoardApp.Web.Data.TaskBoardAppDbContext.Boards">
+            <summary>
+            Db set table for boards entities
+            </summary>
+        </member>
+        <member name="P:TaskBoardApp.Web.Data.TaskBoardAppDbContext.Tasks">
+            <summary>
+            Db set table for task entites
+            </summary>
+        </member>
+        <member name="M:TaskBoardApp.Web.Data.TaskBoardAppDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Method for FluentApi configuration to the database
+            </summary>
+            <param name="builder"></param>
+        </member>
+    </members>
+</doc>
