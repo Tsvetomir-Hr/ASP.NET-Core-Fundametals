@@ -21,3 +21,4 @@ namespace Watchlist.Models
         public string ConfirmPassword { get; set; } = null!;
     }
 }
+  

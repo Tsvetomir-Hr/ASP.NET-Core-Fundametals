@@ -7,12 +7,12 @@ using Watchlist.Models;
 namespace Watchlist.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class UserController : Controller
     {
         private readonly UserManager<User> userManager;
         private readonly SignInManager<User> signInManager;
 
-        public AccountController(
+        public UserController(
             UserManager<User> _userManager,
             SignInManager<User> _signInManager)
         {
@@ -21,12 +21,14 @@ namespace Watchlist.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Register()
         {
             var model = new RegisterViewModel();
             return View(model);
         }
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (!ModelState.IsValid)
@@ -51,6 +53,44 @@ namespace Watchlist.Controllers
                 ModelState.AddModelError("", error.Description);
             }
             return View(model);
+        }
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Login()
+        {
+            var model = new LoginViewModel();
+            return View(model);
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var user = await userManager.FindByNameAsync(model.UserName);
+            if (user != null)
+            {
+                var result = await signInManager.PasswordSignInAsync(user, model.Password, false, false);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+            }
+            ModelState.AddModelError("", "Invalid Login");
+
+            return View(model);
+
+        }
+        
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }
