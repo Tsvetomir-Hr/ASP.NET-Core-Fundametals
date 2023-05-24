@@ -18,6 +18,16 @@ namespace Watchlist.Data
             builder.Entity<UserMovie>()
                 .HasKey(x => new { x.UserId, x.MovieId });
 
+            builder.Entity<User>()
+                .Property(u => u.UserName)
+                .HasMaxLength(20)
+                .IsRequired();
+                
+            builder.Entity<User>()
+                .Property(u => u.Email)
+                .HasMaxLength(60)
+                .IsRequired();
+            
             builder
                 .Entity<Genre>()
                 .HasData(new Genre()
