@@ -23,7 +23,7 @@ namespace Watchlist.Data
 
         [ForeignKey(nameof(Genre))]
         public int GenreId { get; set; }
-        public virtual Genre Genre { get; set; } = null!;
+        public virtual Genre? Genre { get; set; } = null!;
 
         public virtual ICollection<UserMovie> UsersMovies { get; set; } = null!;
     }
