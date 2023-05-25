@@ -51,6 +51,8 @@ namespace Watchlist.Services
                 Movie = movie,
                 User = user
             });
+
+            await context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<MovieViewModel>> GetAllAsync()
