@@ -7,12 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace Library.Controllers
 {
     [Authorize]
-    public class ApplicationUserController : Controller
+    public class UserController : Controller
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
 
-        public ApplicationUserController(
+        public UserController(
             UserManager<ApplicationUser> _userManager,
             SignInManager<ApplicationUser> _signInManager)
         {

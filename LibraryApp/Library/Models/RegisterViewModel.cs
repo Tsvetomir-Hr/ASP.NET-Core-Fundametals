@@ -5,7 +5,7 @@ namespace Library.Models
     public class RegisterViewModel
     {
         [Required]
-        [StringLength(20,MinimumLength =5)]
+        [StringLength(20, MinimumLength = 5)]
         public string UserName { get; set; } = null!;
 
         [Required]
@@ -14,7 +14,7 @@ namespace Library.Models
         public string Email { get; set; } = null!;
 
         [Required]
-        [StringLength(20,MinimumLength =5)]
+        [StringLength(20, MinimumLength = 5)]
         [DataType(DataType.Password)]
         public string Password { get; set; } = null!;
 
