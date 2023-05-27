@@ -28,7 +28,7 @@ namespace Library.Data
                 .HasMaxLength(60)
                 .IsRequired();
 
-            /* builder
+            builder
                 .Entity<Book>()
                 .HasData(new Book()
                 {
@@ -68,7 +68,7 @@ namespace Library.Data
                     Id = 5,
                     Name = "Fantasy"
                 });
-            */
+            
 
             base.OnModelCreating(builder);
         }
