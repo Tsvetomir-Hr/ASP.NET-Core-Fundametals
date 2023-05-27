@@ -14,11 +14,17 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 {
     options.SignIn.RequireConfirmedAccount = false;
-    options.Password.RequiredLength = 3;
+    options.Password.RequiredLength = 5;
     options.User.RequireUniqueEmail = true;
     
 })
     .AddEntityFrameworkStores<LibraryDbContext>();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/User/Login";
+
+});
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
