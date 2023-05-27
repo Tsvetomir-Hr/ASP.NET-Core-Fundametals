@@ -4,6 +4,7 @@ using Library.Models;
 using Library.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Library.Controllers
 {
@@ -25,6 +26,14 @@ namespace Library.Controllers
 
             return View(models);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Mine()
+        {
+            var models = await bookService.GetMineBookAsync();
+            return View(models);
+        }
+
         [HttpGet]
         public async Task<IActionResult> Add()
         {
@@ -34,6 +43,7 @@ namespace Library.Controllers
             };
             return View(model);
         }
+
         [HttpPost]
         public async Task<IActionResult> Add(AddBookViewModel model)
         {
@@ -53,6 +63,34 @@ namespace Library.Controllers
                 return View(model);
             }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AddToCollection(int bookId)
+        {
+
+            try
+            {
+                var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)!.Value;
+
+                await bookService.AddBookToCollectionAsync(bookId, userId!);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return RedirectToAction(nameof(Mine));
+        }
+        [HttpPost]
+        public async Task<IActionResult> RemoveFromCollection(int bookId)
+        {
+            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)!.Value;
+
+            await bookService.RemoveFromCollectionAsync(bookId, userId);
+
+            return RedirectToAction(nameof(All));
+        }
+
 
     }
 }

@@ -10,7 +10,6 @@ namespace Library.Models
             this.Categories = new HashSet<Category>();
         }
 
-      
         [Required]
         [StringLength(50, MinimumLength = 10)]
         public string Title { get; set; } = null!;
