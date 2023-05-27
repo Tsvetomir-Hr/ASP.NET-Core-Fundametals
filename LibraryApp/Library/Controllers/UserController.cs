@@ -72,7 +72,7 @@ namespace Library.Controllers
                 var reuslt = await signInManager.PasswordSignInAsync(user, model.Password, false, false);
                 if (reuslt.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("All", "Books");
                 }
             }
             ModelState.AddModelError("", "Invalid login, please try again!");

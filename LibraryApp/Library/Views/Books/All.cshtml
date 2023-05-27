@@ -1,17 +1,23 @@
-﻿@{
+﻿@model IEnumerable<BookViewModel>
+
+@{
     ViewBag.Title = "All Books";
 }
 
-@*
+
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
-
+@if (Model.Count() == 0)
+{
+    <h1>No book added yet!</h1>
+}
 <div class="text-center row">
+
     @foreach (var book in Model)
     {
         <div class="card col-4" style="width: 20rem; ">
             <img class="card-img-top" style="width: 18rem;"
-             src="@book.ImageUrl" alt="Book Image">
+                 src="@book.ImageUrl" alt="Book Image">
             <div class="card-body">
 
                 <h5 class="card-title mt-1">@book.Title</h5>
@@ -26,4 +32,3 @@
         </div>
     }
 </div>
-*@
