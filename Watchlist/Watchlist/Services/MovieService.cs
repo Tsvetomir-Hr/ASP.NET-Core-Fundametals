@@ -18,6 +18,7 @@ namespace Watchlist.Services
         {
             var entity = new Movie()
             {
+                Id = model.Id,
                 Director = model.Director,
                 GenreId = model.GenreId,
                 ImageUrl = model.ImageUrl,
@@ -33,6 +34,7 @@ namespace Watchlist.Services
         public async Task AddMovieToCollectionASync(int movieId, string userId)
         {
             var user = await context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+
             if (user == null)
             {
                 throw new ArgumentException("Invalid user ID!");

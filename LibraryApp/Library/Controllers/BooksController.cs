@@ -79,7 +79,7 @@ namespace Library.Controllers
 
                 throw;
             }
-            return RedirectToAction(nameof(Mine));
+            return RedirectToAction(nameof(All));
         }
         [HttpPost]
         public async Task<IActionResult> RemoveFromCollection(int bookId)
@@ -88,7 +88,7 @@ namespace Library.Controllers
 
             await bookService.RemoveFromCollectionAsync(bookId, userId);
 
-            return RedirectToAction(nameof(All));
+            return RedirectToAction(nameof(Mine));
         }
 
 

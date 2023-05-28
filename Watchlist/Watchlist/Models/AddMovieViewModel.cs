@@ -5,7 +5,8 @@ namespace Watchlist.Models
 {
     public class AddMovieViewModel
     {
-
+        [Key]
+        public int Id { get; set; }
 
         [Required]
         [StringLength(50, MinimumLength = 10)]

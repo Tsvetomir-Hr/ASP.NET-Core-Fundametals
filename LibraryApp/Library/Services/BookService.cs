@@ -18,7 +18,11 @@ namespace Library.Services
 
         public async Task AddBookToCollectionAsync(int bookId, string userId)
         {
-            var user = await context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            var user = await context.Users
+                .Include(u=>u.ApplicationUsersBooks)
+                .FirstOrDefaultAsync(u=>u.Id==userId);
+
+            
             if (user == null)
             {
                 throw new ArgumentException("Invalid user ID!");
@@ -28,21 +32,22 @@ namespace Library.Services
             {
                 throw new ArgumentException("Invalid book ID!");
             }
-            if (user.ApplicationUsersBooks.Any(b => b.BookId == bookId))
+
+            if (!user.ApplicationUsersBooks.Any(b=>b.BookId==bookId))
             {
-                return;
+                user.ApplicationUsersBooks.Add(new ApplicationUserBook()
+                {
+                    ApplicationUserId = userId,
+                    ApplicationUser = user,
+                    BookId = bookId,
+                    Book = book
+
+                });
+
+                await context.SaveChangesAsync();
             }
 
-            user.ApplicationUsersBooks.Add(new ApplicationUserBook()
-            {
-                ApplicationUserId = userId,
-                ApplicationUser = user,
-                BookId = bookId,
-                Book = book
-
-            });
-
-            await context.SaveChangesAsync();
+            
         }
 
         public async Task AddMovieAsync(AddBookViewModel model)
@@ -103,21 +108,21 @@ namespace Library.Services
 
         public async Task RemoveFromCollectionAsync(int bookId, string userId)
         {
-            var user = context.Users.Find(userId);
+            var user = await context.Users
+                .Include(u => u.ApplicationUsersBooks)
+                .FirstOrDefaultAsync(u=>u.Id==userId);
 
-            var minebooks = await GetMineBookAsync();
-
-            if (minebooks.Any(b => b.Id == bookId))
+            if (user==null)
             {
-               
-                    
-                
+                throw new ArgumentException("Invalid user ID!");
             }
+            var book = user.ApplicationUsersBooks.FirstOrDefault(b => b.BookId == bookId);
+            if (book != null)
+            {
+                user.ApplicationUsersBooks.Remove(book);
 
-
-
-
-            //user.ApplicationUsersBooks.Remove();
+                await context.SaveChangesAsync();
+            }
 
 
         }
