@@ -9,7 +9,7 @@ namespace Watchlist.Controllers
         {
             if (User?.Identity?.IsAuthenticated ?? false)
             {
-                return RedirectToAction("All","Movie");
+                return RedirectToAction("All","Movies");
             }
             return View();
         }

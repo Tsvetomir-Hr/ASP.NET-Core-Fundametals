@@ -24,8 +24,9 @@
                         </li>
                         @if (User?.Identity?.IsAuthenticated ?? false)
                         {
+                          
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Movie" asp-action="All">All</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Add">Add Movie</a>
                             </li>
                         }
                     </ul>
