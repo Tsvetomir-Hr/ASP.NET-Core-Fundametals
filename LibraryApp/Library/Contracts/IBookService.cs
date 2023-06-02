@@ -7,6 +7,7 @@ namespace Library.Contracts
     public interface IBookService
     {
         Task<IEnumerable<BookViewModel>> GetAllBooksAsync();
+
         Task<IEnumerable<MineBookViewModel>> GetMineBookAsync();
 
 
