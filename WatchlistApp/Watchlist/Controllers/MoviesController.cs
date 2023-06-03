@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using Watchlist.Contracts;
 using Watchlist.Data.Entities;
 using Watchlist.Models;
@@ -39,5 +40,43 @@ namespace Watchlist.Controllers
             await movieService.AddMovieAsync(model);
             return RedirectToAction("All", "Movies");
         }
+        [HttpPost]
+        public async Task<IActionResult> AddToCollection(int movieId)
+        {
+            try
+            {
+                var userId = User?.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? null;
+
+                await movieService.AddToWatchedAsync(movieId, userId);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new ArgumentException(ex.Message);
+            }
+
+            return RedirectToAction(nameof(All));
+        }
+        [HttpGet]
+        public async Task<IActionResult> Watched()
+        {
+            try
+            {
+                var userId = User?.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? null;
+
+                var models = await movieService.GetWatchedMoviesAsync(userId);
+
+                return View(models);
+            }
+            catch (Exception ex)
+            {
+
+                throw new ArgumentException(ex.Message);
+            }
+
+
+        }
+
     }
 }
