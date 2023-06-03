@@ -112,12 +112,33 @@ namespace Watchlist.Services
                     Genre = m.Genre.Name,
                     Rating = m.Rating
                 }).ToList();
-            
+
         }
 
-        public Task RemoveFromWatchedAsync(int movieId, string userId)
+        public async Task RemoveFromWatchedAsync(int movieId, string userId)
         {
-            throw new NotImplementedException();
+
+
+            var user = await context.Users
+                .Include(u => u.UsersMovies)
+                .FirstOrDefaultAsync(u => u.Id == userId);
+
+            if (user == null)
+            {
+                throw new ArgumentException("Invalid user ID!");
+            }
+            var movie = user.UsersMovies.FirstOrDefault(m => m.MovieId == movieId);
+
+            if (movie == null)
+            {
+                throw new ArgumentException("Invalid movie ID!");
+            }
+
+            user.UsersMovies.Remove(movie);
+
+
+            await context.SaveChangesAsync();
+
         }
     }
 }
