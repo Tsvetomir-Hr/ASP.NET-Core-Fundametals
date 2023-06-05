@@ -1,5 +1,7 @@
+using Contacts.Contracts;
 using Contacts.Data;
 using Contacts.Data.Entities;
+using Contacts.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,6 +28,8 @@ builder.Services.ConfigureApplicationCookie(cfg =>
 
     cfg.LoginPath = "/User/Login";
 });
+
+builder.Services.AddScoped<IContactService, ContactService>();
 
 var app = builder.Build();
 

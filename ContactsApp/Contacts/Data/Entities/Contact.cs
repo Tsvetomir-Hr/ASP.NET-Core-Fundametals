@@ -24,6 +24,7 @@ namespace Contacts.Data.Entities
         public string PhoneNumber { get; set; } = null!;
 
         public string? Address { get; set; }
+
         [Required]
         public string Website { get; set; } = null!;
 
