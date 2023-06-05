@@ -8,6 +8,10 @@ namespace Contacts.Controllers
     {
         public IActionResult Index()
         {
+            if (User?.Identity?.IsAuthenticated ?? false)
+            {
+                return RedirectToAction("All", "Contacts");
+            }
             return View();
         }
     }
