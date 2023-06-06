@@ -1,43 +1,45 @@
-﻿@{
+﻿@model AddContactViewModel
+
+@{
     ViewBag.Title = "Edit a Contact";
 }
 
-@*
+
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
 
 <div class="row">
     <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
-        <form asp-action="Edit" method="post">
+        <form asp-action="edit" method="post">
             <div class="mb-3">
-                <label asp-for="FirstName" class="form-label">First Name</label>
+                <label asp-for="FirstName" class="form-label">first name</label>
                 <input asp-for="FirstName" class="form-control" aria-required="true" />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="LastName" class="form-label">Last Name</label>
+                <label asp-for="LastName" class="form-label">last name</label>
                 <input asp-for="LastName" class="form-control" aria-required="true" />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="Email" class="form-label">E-mail</label>
+                <label asp-for="Email" class="form-label">e-mail</label>
                 <input asp-for="Email" class="form-control" aria-required="true" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="PhoneNumber" class="form-label">Phone Number</label>
+                <label asp-for="PhoneNumber" class="form-label">phone number</label>
                 <input asp-for="PhoneNumber" class="form-control" aria-required="true" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="Address" class="form-label">Address</label>
+                <label asp-for="Address" class="form-label">address</label>
                 <input asp-for="Address" class="form-control" aria-required="true" />
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="Website" class="form-label">Website</label>
-                <input asp-for="Website" class="form-control" aria-required="true" />
-                <span asp-validation-for="Website" class="text-danger"></span>
+                <label asp-for="WebSite" class="form-label">website</label>
+                <input asp-for="WebSite" class="form-control" aria-required="true" />
+                <span asp-validation-for="WebSite" class="text-danger"></span>
             </div>
             <div class="mb-3 text-center">
                 <input class="btn btn-secondary" type="submit" value="Edit" />
@@ -47,7 +49,6 @@
 </div>
 
 
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+@section scripts {
+        <partial name="_validationscriptspartial" />
 }
-*@

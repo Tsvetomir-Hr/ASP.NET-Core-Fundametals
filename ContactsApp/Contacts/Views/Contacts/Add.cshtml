@@ -1,7 +1,9 @@
-﻿@{
+﻿@model AddContactViewModel
+
+@{
     ViewBag.Title = "Add a Contact";
 }
-@*
+
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
 
@@ -34,9 +36,9 @@
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
              <div class="mb-3">
-                <label asp-for="Website" class="form-label">Website</label>
-                <input asp-for="Website" class="form-control" value="" />
-                <span asp-validation-for="Website" class="text-danger"></span>
+                <label asp-for="WebSite" class="form-label">Website</label>
+                <input asp-for="WebSite" class="form-control" value="" />
+                <span asp-validation-for="WebSite" class="text-danger"></span>
             </div>
             <div class="mb-3 text-center">
                 <input class="btn btn-primary" type="submit" value="Add" />
@@ -49,4 +51,3 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
-*@
