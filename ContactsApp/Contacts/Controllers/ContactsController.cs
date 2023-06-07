@@ -1,4 +1,5 @@
 ﻿using Contacts.Contracts;
+using Contacts.Data.Entities;
 using Contacts.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -22,7 +23,7 @@ namespace Contacts.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> MyTeam()
+        public async Task<IActionResult> Team()
         {
             try
             {
@@ -67,8 +68,8 @@ namespace Contacts.Controllers
                 var contact = await contactService.GetContactByIdAsync(contactId);
 
                 var model = new AddContactViewModel()
-                {
-                    Id = contactId,
+                { 
+                    
                     FirstName = contact.FirstName,
                     LastName = contact.LastName,
                     Email = contact.Email,
@@ -76,9 +77,6 @@ namespace Contacts.Controllers
                     Address = contact.Address ?? "No Address",
                     WebSite = contact.Website
                 };
-
-                await contactService.DeleteContactAsync(contact);
-
 
                 return View(model);
 
@@ -92,14 +90,33 @@ namespace Contacts.Controllers
 
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(AddContactViewModel model)
+        public async Task<IActionResult> Edit(ContactViewModel model)
         {
 
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-            await contactService.AddContactAsync(model);
+
+            await contactService.EditContactAsync(model, model.Id);
+
+            return RedirectToAction("All", "Contacts");
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddToTeam(int conctactId)
+        {
+            try
+            {
+                var userId = User?.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? null;
+
+                await contactService.AddToTeamAsync(userId, conctactId);
+            }
+            catch (Exception ex)
+            {
+
+                throw new ArgumentException(ex.Message);
+            }
 
             return RedirectToAction("All", "Contacts");
 

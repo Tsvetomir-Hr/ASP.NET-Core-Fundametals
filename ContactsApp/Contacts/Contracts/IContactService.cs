@@ -14,6 +14,10 @@ namespace Contacts.Contracts
 
         Task<Contact> GetContactByIdAsync(int contactId);
         Task DeleteContactAsync(Contact contact);
-        
+
+        Task EditContactAsync(ContactViewModel model, int contactId);
+
+        Task AddToTeamAsync(string userId, int contactId);
+
     }
 }

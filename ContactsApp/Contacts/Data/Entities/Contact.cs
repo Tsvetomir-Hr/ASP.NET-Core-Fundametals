@@ -20,7 +20,7 @@ namespace Contacts.Data.Entities
         [MaxLength(60)]
         public string Email { get; set; } = null!;
         [Required]
-        [MaxLength(13)]
+        [MaxLength(17)]
         public string PhoneNumber { get; set; } = null!;
 
         public string? Address { get; set; }

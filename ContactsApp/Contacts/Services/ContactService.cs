@@ -19,7 +19,6 @@ namespace Contacts.Services
         {
             var contact = new Contact()
             {
-                Id = model.Id,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Email = model.Email,
@@ -29,6 +28,30 @@ namespace Contacts.Services
             };
 
             await context.Contacts.AddAsync(contact);
+            await context.SaveChangesAsync();
+        }
+
+        public async Task AddToTeamAsync(string userId, int contactId)
+        {
+            var user = await context.Users
+                .Include(u => u.ApplicationUsersContacts)
+                .FirstOrDefaultAsync(u => u.Id == userId);
+            if (user == null)
+            {
+                throw new ArgumentException("Indalid User ID!");
+            }
+            var contact = await context.Contacts.FirstOrDefaultAsync(u => u.Id == contactId);
+            if (contact == null)
+            {
+                throw new ArgumentException("Invalid Contact ID!");
+            }
+            user.ApplicationUsersContacts.Add(new ApplicationUserContact()
+            {
+                ApplicationUser = user,
+                ApplicationUserId = userId,
+                ContactId = contactId,
+                Contact = contact
+            });
             await context.SaveChangesAsync();
         }
 
@@ -46,9 +69,28 @@ namespace Contacts.Services
 
         }
 
+        public async Task EditContactAsync(ContactViewModel model, int contactId)
+        {
+            var contact = await context.Contacts.FindAsync(contactId);
+
+            if (contact == null)
+            {
+                throw new ArgumentException("Contact with that ID do not exist !");
+            }
+            contact.FirstName = model.FirstName;
+            contact.LastName = model.LastName;
+            contact.Email = model.Email;
+            contact.Address = model.Address;
+            contact.Website = model.WebSite;
+            contact.PhoneNumber = model.PhoneNumber;
+
+            await context.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<ContactViewModel>> GetAllContactsAsync()
         {
             var models = await context.Contacts.ToListAsync();
+
 
             return models.Select(x => new ContactViewModel()
             {
@@ -74,20 +116,14 @@ namespace Contacts.Services
 
         public async Task<IEnumerable<ContactViewModel>> GetMyTeamAsync(string userId)
         {
-            var user = await context.Users
-                .Include(u => u.ApplicationUsersContacts)
-                .FirstOrDefaultAsync(u => u.Id == userId);
-
-            if (user == null)
-            {
-                throw new ArgumentException("Invalid User ID!");
-            }
-
+            
             var contacts = await context.Contacts
-                 .Include(u => u.ApplicationUsersContacts)
+                 .Include(c => c.ApplicationUsersContacts)
                  .ToListAsync();
 
-            return contacts.Select(c => new ContactViewModel()
+            return contacts
+                .Where(c=>c.ApplicationUsersContacts.Any(ac=>ac.ContactId==c.Id))
+                .Select(c => new ContactViewModel()
             {
                 Id = c.Id,
                 FirstName = c.FirstName,
