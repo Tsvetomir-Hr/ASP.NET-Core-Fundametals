@@ -69,14 +69,16 @@ namespace Contacts.Services
 
         }
 
-        public async Task EditContactAsync(ContactViewModel model, int contactId)
+        public async Task EditContactAsync(AddContactViewModel model, int contactId)
         {
+           
             var contact = await context.Contacts.FindAsync(contactId);
 
             if (contact == null)
             {
                 throw new ArgumentException("Contact with that ID do not exist !");
             }
+
             contact.FirstName = model.FirstName;
             contact.LastName = model.LastName;
             contact.Email = model.Email;
@@ -104,14 +106,27 @@ namespace Contacts.Services
             });
         }
 
-        public async Task<Contact> GetContactByIdAsync(int contactId)
+        public async Task<AddContactViewModel> GetContactByIdAsync(int contactId)
         {
             var contact = await context.Contacts.FirstOrDefaultAsync(x => x.Id == contactId);
+
+
             if (contact == null)
             {
                 throw new ArgumentException("Invalid Contact ID!");
             }
-            return contact;
+
+            AddContactViewModel viewModel = new AddContactViewModel()
+            {
+                FirstName = contact.FirstName,
+                LastName = contact.LastName,
+                Email = contact.Email,
+                PhoneNumber = contact.PhoneNumber,
+                Address = contact.Address ?? "No address",
+                WebSite = contact.Website
+            };
+
+            return viewModel;
         }
 
         public async Task<IEnumerable<ContactViewModel>> GetMyTeamAsync(string userId)

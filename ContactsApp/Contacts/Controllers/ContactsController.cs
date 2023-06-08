@@ -65,21 +65,9 @@ namespace Contacts.Controllers
             try
             {
 
-                var contact = await contactService.GetContactByIdAsync(contactId);
-
-                var model = new AddContactViewModel()
-                { 
-                    
-                    FirstName = contact.FirstName,
-                    LastName = contact.LastName,
-                    Email = contact.Email,
-                    PhoneNumber = contact.PhoneNumber,
-                    Address = contact.Address ?? "No Address",
-                    WebSite = contact.Website
-                };
+                var model = await contactService.GetContactByIdAsync(contactId);
 
                 return View(model);
-
 
             }
             catch (Exception ex)
@@ -90,7 +78,7 @@ namespace Contacts.Controllers
 
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(ContactViewModel model)
+        public async Task<IActionResult> Edit(int contactId,AddContactViewModel model)
         {
 
             if (!ModelState.IsValid)
@@ -98,7 +86,7 @@ namespace Contacts.Controllers
                 return View(model);
             }
 
-            await contactService.EditContactAsync(model, model.Id);
+            await contactService.EditContactAsync(model,contactId);
 
             return RedirectToAction("All", "Contacts");
 

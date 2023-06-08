@@ -90,7 +90,7 @@ namespace Contacts.Controllers
             return View(model);
 
         }
-
+ 
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
