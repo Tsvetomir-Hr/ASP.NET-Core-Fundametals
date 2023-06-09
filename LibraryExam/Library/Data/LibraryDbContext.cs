@@ -11,10 +11,16 @@ namespace Library.Data
         {
         }
 
+        public DbSet<Book> Books { get; set; } = null!;
+        public DbSet<Category> Categories { get; set; } = null!;
+
+        public DbSet<IdentityUserBook> IdentityUsersBooks { get; set; } = null!;
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
 
             builder.Entity<IdentityUserBook>().HasKey(e => new { e.CollectorId, e.BookId });
+            builder.Entity<Book>().Property(p => p.Rating).HasColumnType("decimal").HasPrecision(18, 2);
 
             builder
                .Entity<Book>()
