@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Library.Data.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Library.Data
@@ -12,6 +13,9 @@ namespace Library.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+
+            builder.Entity<IdentityUserBook>().HasKey(e => new { e.CollectorId, e.BookId });
+
             /* builder
                 .Entity<Book>()
                 .HasData(new Book()

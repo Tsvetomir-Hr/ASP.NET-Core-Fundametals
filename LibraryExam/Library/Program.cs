@@ -13,9 +13,13 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 {
     options.SignIn.RequireConfirmedAccount = false;
+    options.Password.RequireDigit = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
 })
     .AddEntityFrameworkStores<LibraryDbContext>();
 builder.Services.AddControllersWithViews();
+
 
 var app = builder.Build();
 
