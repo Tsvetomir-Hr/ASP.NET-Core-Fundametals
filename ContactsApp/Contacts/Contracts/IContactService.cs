@@ -8,16 +8,17 @@ namespace Contacts.Contracts
     {
 
         Task<IEnumerable<ContactViewModel>> GetAllContactsAsync();
+
         Task<IEnumerable<ContactViewModel>> GetMyTeamAsync(string userId);
 
-        Task AddContactAsync(AddContactViewModel model);
+        Task AddContactAsync(FormContactViewModel model);
 
-        Task<AddContactViewModel> GetContactByIdAsync(int contactId);
-        Task DeleteContactAsync(Contact contact);
+        Task<FormContactViewModel?> GetContactByIdAsync(int contactId);
 
-        Task EditContactAsync(AddContactViewModel model, int contactId);
+        Task EditContactAsync(FormContactViewModel model, int contactId);
 
-        Task AddToTeamAsync(string userId, int contactId);
+        Task AddToTeamAsync(string userId, FormContactViewModel model);
 
+        Task RemoveFromTeamAsync(string userId, FormContactViewModel contact);
     }
 }

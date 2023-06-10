@@ -3,9 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Contacts.Models
 {
-    public class AddContactViewModel
+    public class FormContactViewModel
     {
-      
+        public int Id { get; set; }
+
         [Required]
         [StringLength(50, MinimumLength = 2)]
         public string FirstName { get; set; } = null!;

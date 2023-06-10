@@ -43,11 +43,11 @@ namespace Contacts.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            var model = new AddContactViewModel();
+            var model = new FormContactViewModel();
             return View(model);
         }
         [HttpPost]
-        public async Task<IActionResult> Add(AddContactViewModel model)
+        public async Task<IActionResult> Add(FormContactViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -61,53 +61,58 @@ namespace Contacts.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int contactId)
         {
+            var model = await contactService.GetContactByIdAsync(contactId);
 
-            try
-            {
+            return View(model);
 
-                var model = await contactService.GetContactByIdAsync(contactId);
 
-                return View(model);
-
-            }
-            catch (Exception ex)
-            {
-
-                throw new ArgumentException(ex.Message);
-            }
 
         }
+
         [HttpPost]
-        public async Task<IActionResult> Edit(int contactId,AddContactViewModel model)
+        public async Task<IActionResult> Edit(int id, FormContactViewModel model)
         {
 
             if (!ModelState.IsValid)
             {
                 return View(model);
+
             }
 
-            await contactService.EditContactAsync(model,contactId);
+            await contactService.EditContactAsync(model, id);
+
+            return RedirectToAction("All", "Contacts");
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddToTeam(int contactId)
+        {
+            var userId = User?.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? null;
+
+            var contact = await contactService.GetContactByIdAsync(contactId);
+
+            await contactService.AddToTeamAsync(userId, contact);
+
 
             return RedirectToAction("All", "Contacts");
 
         }
         [HttpPost]
-        public async Task<IActionResult> AddToTeam(int conctactId)
+        public async Task<IActionResult> RemoveFromTeam(int contactId)
         {
-            try
-            {
-                var userId = User?.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? null;
+            var contact = await contactService.GetContactByIdAsync(contactId);
 
-                await contactService.AddToTeamAsync(userId, conctactId);
-            }
-            catch (Exception ex)
+            if (contact == null)
             {
-
-                throw new ArgumentException(ex.Message);
+                return RedirectToAction(nameof(Team));
             }
 
-            return RedirectToAction("All", "Contacts");
+            var userId = User?.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? null;
 
+            await contactService.RemoveFromTeamAsync(userId,contact);
+
+            return RedirectToAction(nameof(Team));
         }
     }
 }
