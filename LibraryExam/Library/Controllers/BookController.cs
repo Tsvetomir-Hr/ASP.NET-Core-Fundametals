@@ -25,19 +25,13 @@ namespace Library.Controllers
         [HttpGet]
         public async Task<IActionResult> Mine()
         {
-            try
-            {
-                var userId = User?.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
 
-                var books = await bookService.GetMineBooksAsync(userId);
+            var userId = GetUserId();
 
-                return View(books);
-            }
-            catch (Exception)
-            {
+            var books = await bookService.GetMineBooksAsync(userId);
 
-                throw;
-            }
+            return View(books);
+
 
         }
         [HttpGet]
@@ -64,11 +58,36 @@ namespace Library.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AddToCollection(int bookId)
+        public async Task<IActionResult> AddToCollection(int id)
         {
-            await bookService.AddToMyCollectionAsync(GetUserId(), bookId);
+            var book = await bookService.GetBookByIdAsync(id);
+            if (book == null)
+            {
+                return RedirectToAction(nameof(All));
+            }
+
+            var userId = GetUserId();
+
+            await bookService.AddToMyCollectionAsync(userId, book);
 
             return RedirectToAction(nameof(All));
+
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> RemoveFromCollection(int id)
+        {
+            var book = await bookService.GetBookByIdAsync(id);
+            if (book == null)
+            {
+                return RedirectToAction(nameof(Mine));
+            }
+            var userId = GetUserId();
+
+            await bookService.RemoveFromMyCollectionAsync(userId, book);
+
+            return RedirectToAction(nameof(Mine));
+
         }
 
     }
