@@ -20,10 +20,11 @@
                 <p >Category: @book.Category</p>
             </div>
 
-            <input hidden="hidden" value="@book.Id"/>
             <form class="input-group-sm" asp-controller="Book" asp-action="AddToCollection" asp-route-Id="@book.Id">
                 <input type="submit" value="Add to Collection" class="fs-6 btn btn-success mb-3 p-2" />
             </form>
+
+            <a href="/Book/Edit/@book.Id" class=" btn btn-warning" >Edit</a>
         </div>
     }
 </div>

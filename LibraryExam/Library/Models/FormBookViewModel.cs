@@ -3,9 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Library.Models
 {
-    public class AddBookViewModel
+    public class FormBookViewModel
     {
-        public AddBookViewModel()
+        public FormBookViewModel()
         {
             this.Categories = new HashSet<Category>();
         }

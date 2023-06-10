@@ -39,14 +39,14 @@ namespace Library.Controllers
         {
             var categories = await bookService.GetAllCategoriesForAddFormAsync();
 
-            var model = new AddBookViewModel()
+            var model = new FormBookViewModel()
             {
                 Categories = categories
             };
             return View(model);
         }
         [HttpPost]
-        public async Task<IActionResult> Add(AddBookViewModel model)
+        public async Task<IActionResult> Add(FormBookViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -88,6 +88,30 @@ namespace Library.Controllers
 
             return RedirectToAction(nameof(Mine));
 
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var categories = await bookService.GetAllCategoriesForAddFormAsync();
+
+            var model = await bookService.GetBookByIdAsync(id);
+
+            model!.Categories = categories;
+
+            return View(model);
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, FormBookViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            await bookService.EditBookAsync(model, id);
+            return RedirectToAction("All", "Book");
         }
 
     }

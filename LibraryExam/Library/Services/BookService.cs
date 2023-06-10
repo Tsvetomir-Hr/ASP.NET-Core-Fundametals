@@ -15,7 +15,7 @@ namespace Library.Services
             this.context = context;
         }
 
-        public async Task AddBookAsync(AddBookViewModel model)
+        public async Task AddBookAsync(FormBookViewModel model)
         {
             var book = new Book()
             {
@@ -32,7 +32,7 @@ namespace Library.Services
         }
 
 
-        public async Task AddToMyCollectionAsync(string userId, AddBookViewModel book)
+        public async Task AddToMyCollectionAsync(string userId, FormBookViewModel book)
         {
 
             bool isAlreadyAdded = await context.IdentityUsersBooks.AnyAsync(b => b.BookId == book.Id && userId == b.CollectorId);
@@ -46,6 +46,23 @@ namespace Library.Services
                 };
 
                 await context.IdentityUsersBooks.AddAsync(book1);
+
+                await context.SaveChangesAsync();
+            }
+
+        }
+
+        public async Task EditBookAsync(FormBookViewModel model, int id)
+        {
+            var book = await context.Books.FindAsync(id);
+            if (book != null)
+            {
+                book.Title = model.Title;
+                book.Author = model.Author;
+                book.Description = model.Description;
+                book.ImageUrl = model.ImageUrl;
+                book.Rating = model.Rating;
+                book.CategoryId = model.CategoryId;
 
                 await context.SaveChangesAsync();
             }
@@ -74,11 +91,11 @@ namespace Library.Services
             return await context.Categories.ToListAsync();
         }
 
-        public async Task<AddBookViewModel?> GetBookByIdAsync(int id)
+        public async Task<FormBookViewModel?> GetBookByIdAsync(int id)
         {
             return await context.Books
                 .Where(b => b.Id == id)
-                .Select(b => new AddBookViewModel()
+                .Select(b => new FormBookViewModel()
                 {
                     Id = b.Id,
                     Title = b.Title,
@@ -107,18 +124,18 @@ namespace Library.Services
 
         }
 
-        public async Task RemoveFromMyCollectionAsync(string userId, AddBookViewModel book)
+        public async Task RemoveFromMyCollectionAsync(string userId, FormBookViewModel book)
         {
-                var userBookToRemove = await context.IdentityUsersBooks
-                    .FirstOrDefaultAsync(ub => ub.CollectorId == userId && ub.BookId == book.Id);
+            var userBookToRemove = await context.IdentityUsersBooks
+                .FirstOrDefaultAsync(ub => ub.CollectorId == userId && ub.BookId == book.Id);
 
-                if (userBookToRemove != null)
-                {
-                    context.IdentityUsersBooks.Remove(userBookToRemove);
-                    await context.SaveChangesAsync();
+            if (userBookToRemove != null)
+            {
+                context.IdentityUsersBooks.Remove(userBookToRemove);
+                await context.SaveChangesAsync();
 
-                }
-            
+            }
+
         }
     }
 }

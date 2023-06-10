@@ -7,10 +7,11 @@ namespace Library.Contracts
     {
         Task<IEnumerable<AllBookViewModel>> GetAllBooksAsync();
         Task<IEnumerable<MineBookViewModel>> GetMineBooksAsync(string userId);
-        Task AddBookAsync(AddBookViewModel model);
+        Task AddBookAsync(FormBookViewModel model);
         Task<IEnumerable<Category>> GetAllCategoriesForAddFormAsync();
-        Task<AddBookViewModel?> GetBookByIdAsync(int id);
-        Task AddToMyCollectionAsync(string userId,AddBookViewModel model);
-        Task RemoveFromMyCollectionAsync(string userId,AddBookViewModel model);
+        Task<FormBookViewModel?> GetBookByIdAsync(int id);
+        Task AddToMyCollectionAsync(string userId,FormBookViewModel model);
+        Task RemoveFromMyCollectionAsync(string userId,FormBookViewModel model);
+        Task EditBookAsync(FormBookViewModel model, int id);
     }
 }
