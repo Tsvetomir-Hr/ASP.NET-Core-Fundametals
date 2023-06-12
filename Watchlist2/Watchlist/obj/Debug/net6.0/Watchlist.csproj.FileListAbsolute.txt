@@ -276,3 +276,9 @@ D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\obj\Debug\net6.0\refint\Watchli
 D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\obj\Debug\net6.0\Watchlist.pdb
 D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\obj\Debug\net6.0\Watchlist.genruntimeconfig.cache
 D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\obj\Debug\net6.0\ref\Watchlist.dll
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\bin\Debug\net6.0\Watchlist.Data.dll
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\bin\Debug\net6.0\Watchlist.Web.Models.dll
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\bin\Debug\net6.0\Watchlist.Data.pdb
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\bin\Debug\net6.0\Watchlist.Web.Models.pdb
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\bin\Debug\net6.0\Watchlist.Services.dll
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\bin\Debug\net6.0\Watchlist.Services.pdb

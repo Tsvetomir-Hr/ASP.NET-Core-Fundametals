@@ -20,33 +20,33 @@ namespace Watchlist.Data
 
             builder.Entity<Movie>().Property(p => p.Rating).HasPrecision(18, 2);
 
-            //builder
-            //    .Entity<Genre>()
-            //    .HasData(new Genre()
-            //    {
-            //        Id = 1,
-            //        Name = "Action"
-            //    },
-            //    new Genre()
-            //    {
-            //        Id = 2,
-            //        Name = "Comedy"
-            //    },
-            //    new Genre()
-            //    {
-            //        Id = 3,
-            //        Name = "Drama"
-            //    },
-            //    new Genre()
-            //    {
-            //        Id = 4,
-            //        Name = "Horror"
-            //    },
-            //    new Genre()
-            //    {
-            //        Id = 5,
-            //        Name = "Romantic"
-            //    });
+            builder
+                .Entity<Genre>()
+                .HasData(new Genre()
+                {
+                    Id = 1,
+                    Name = "Action"
+                },
+                new Genre()
+                {
+                    Id = 2,
+                    Name = "Comedy"
+                },
+                new Genre()
+                {
+                    Id = 3,
+                    Name = "Drama"
+                },
+                new Genre()
+                {
+                    Id = 4,
+                    Name = "Horror"
+                },
+                new Genre()
+                {
+                    Id = 5,
+                    Name = "Romantic"
+                });
 
             base.OnModelCreating(builder);
         }

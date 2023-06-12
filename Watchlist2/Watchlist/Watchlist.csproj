@@ -21,6 +21,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Watchlist.Data\Watchlist.Data.csproj" />
+    <ProjectReference Include="..\Watchlist.Services\Watchlist.Services.csproj" />
+    <ProjectReference Include="..\Watchlist.Web.Models\Watchlist.Web.Models.csproj" />
   </ItemGroup>
 
 </Project>

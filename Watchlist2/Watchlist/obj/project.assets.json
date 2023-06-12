@@ -3647,6 +3647,30 @@
         "runtime": {
           "bin/placeholder/Watchlist.Data.dll": {}
         }
+      },
+      "Watchlist.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Watchlist.Data": "1.0.0",
+          "Watchlist.Web.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Watchlist.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Watchlist.Services.dll": {}
+        }
+      },
+      "Watchlist.Web.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Watchlist.Web.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Watchlist.Web.Models.dll": {}
+        }
       }
     }
   },
@@ -10297,6 +10321,16 @@
       "type": "project",
       "path": "../Watchlist.Data/Watchlist.Data.csproj",
       "msbuildProject": "../Watchlist.Data/Watchlist.Data.csproj"
+    },
+    "Watchlist.Services/1.0.0": {
+      "type": "project",
+      "path": "../Watchlist.Services/Watchlist.Services.csproj",
+      "msbuildProject": "../Watchlist.Services/Watchlist.Services.csproj"
+    },
+    "Watchlist.Web.Models/1.0.0": {
+      "type": "project",
+      "path": "../Watchlist.Web.Models/Watchlist.Web.Models.csproj",
+      "msbuildProject": "../Watchlist.Web.Models/Watchlist.Web.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -10307,7 +10341,9 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.10",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.10",
-      "Watchlist.Data >= 1.0.0"
+      "Watchlist.Data >= 1.0.0",
+      "Watchlist.Services >= 1.0.0",
+      "Watchlist.Web.Models >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -10339,6 +10375,12 @@
           "projectReferences": {
             "D:\\ASP.NET-Core-Fundametals\\Watchlist2\\Watchlist.Data\\Watchlist.Data.csproj": {
               "projectPath": "D:\\ASP.NET-Core-Fundametals\\Watchlist2\\Watchlist.Data\\Watchlist.Data.csproj"
+            },
+            "D:\\ASP.NET-Core-Fundametals\\Watchlist2\\Watchlist.Services\\Watchlist.Services.csproj": {
+              "projectPath": "D:\\ASP.NET-Core-Fundametals\\Watchlist2\\Watchlist.Services\\Watchlist.Services.csproj"
+            },
+            "D:\\ASP.NET-Core-Fundametals\\Watchlist2\\Watchlist.Web.Models\\Watchlist.Web.Models.csproj": {
+              "projectPath": "D:\\ASP.NET-Core-Fundametals\\Watchlist2\\Watchlist.Web.Models\\Watchlist.Web.Models.csproj"
             }
           }
         }

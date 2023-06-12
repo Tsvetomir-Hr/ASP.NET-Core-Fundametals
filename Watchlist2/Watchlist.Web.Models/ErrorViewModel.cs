@@ -1,4 +1,4 @@
-namespace Watchlist.ViewModels
+namespace Watchlist.Web.Models
 {
     public class ErrorViewModel
     {

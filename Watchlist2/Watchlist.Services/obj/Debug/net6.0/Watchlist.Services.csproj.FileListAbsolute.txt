@@ -10,3 +10,8 @@ D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\obj\Debug\net6.0\Watch
 D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\obj\Debug\net6.0\refint\Watchlist.Services.dll
 D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\obj\Debug\net6.0\Watchlist.Services.pdb
 D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\obj\Debug\net6.0\ref\Watchlist.Services.dll
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\bin\Debug\net6.0\Watchlist.Data.dll
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\bin\Debug\net6.0\Watchlist.Web.Models.dll
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\bin\Debug\net6.0\Watchlist.Data.pdb
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\bin\Debug\net6.0\Watchlist.Web.Models.pdb
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\obj\Debug\net6.0\Watchlist.Services.csproj.CopyComplete

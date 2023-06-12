@@ -1,6 +1,4 @@
-﻿
-
-using Watchlist.ViewModels;
+﻿using Watchlist.Web.Models;
 
 namespace Watchlist.Services.Contracts
 {
