@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Watchlist.Services.Contracts;
+using Watchlist.Web.Models;
 
 namespace Watchlist.Controllers
 {
@@ -11,10 +12,30 @@ namespace Watchlist.Controllers
             this.movieService = movieService;
         }
 
+        [HttpGet]
         public async Task<IActionResult> All()
         {
             var models = await movieService.GetAllMovieAsync();
             return View(models);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Add()
+        {
+            var model = new AddMovieViewModel()
+            {
+                Genres = await movieService.GetAllGenresAsync()
+            };
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Add(AddMovieViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            await movieService.AddMovieAsync(model);
+            return RedirectToAction("All", "Movies");
         }
     }
 }

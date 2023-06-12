@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Watchlist.Data;
+using Watchlist.Data.Models;
 using Watchlist.Services.Contracts;
 using Watchlist.Web.Models;
 
@@ -12,6 +13,31 @@ namespace Watchlist.Services
         {
             this.context = context;
         }
+
+        public async Task AddMovieAsync(AddMovieViewModel model)
+        {
+            var movie = new Movie()
+            {
+                Title = model.Title,
+                Director = model.Director,
+                ImageUrl = model.ImageUrl,
+                Rating = model.Rating,
+                GenreId = model.GenreId,
+            };
+
+            await context.AddAsync(movie);
+            await context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<GenreViewModel>> GetAllGenresAsync()
+        {
+            return await context.Genres.Select(g => new GenreViewModel()
+            {
+                Id = g.Id,
+                Name = g.Name
+            }).ToListAsync();
+        }
+
         public async Task<IEnumerable<AllMoviesViewModel>> GetAllMovieAsync()
         {
             return await context.Movies.Select(m => new AllMoviesViewModel()
