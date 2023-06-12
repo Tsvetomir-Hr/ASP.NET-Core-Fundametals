@@ -1,0 +1,12 @@
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\bin\Debug\net6.0\Watchlist.Services.deps.json
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\bin\Debug\net6.0\Watchlist.Services.dll
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\bin\Debug\net6.0\Watchlist.Services.pdb
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\obj\Debug\net6.0\Watchlist.Services.csproj.AssemblyReference.cache
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\obj\Debug\net6.0\Watchlist.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\obj\Debug\net6.0\Watchlist.Services.AssemblyInfoInputs.cache
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\obj\Debug\net6.0\Watchlist.Services.AssemblyInfo.cs
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\obj\Debug\net6.0\Watchlist.Services.csproj.CoreCompileInputs.cache
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\obj\Debug\net6.0\Watchlist.Services.dll
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\obj\Debug\net6.0\refint\Watchlist.Services.dll
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\obj\Debug\net6.0\Watchlist.Services.pdb
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Services\obj\Debug\net6.0\ref\Watchlist.Services.dll

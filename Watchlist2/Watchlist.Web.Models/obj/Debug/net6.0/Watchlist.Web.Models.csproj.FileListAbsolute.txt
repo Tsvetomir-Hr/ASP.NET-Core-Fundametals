@@ -1,0 +1,12 @@
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Web.Models\bin\Debug\net6.0\Watchlist.Web.Models.deps.json
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Web.Models\bin\Debug\net6.0\Watchlist.Web.Models.dll
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Web.Models\bin\Debug\net6.0\Watchlist.Web.Models.pdb
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Web.Models\obj\Debug\net6.0\Watchlist.Web.Models.csproj.AssemblyReference.cache
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Web.Models\obj\Debug\net6.0\Watchlist.Web.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Web.Models\obj\Debug\net6.0\Watchlist.Web.Models.AssemblyInfoInputs.cache
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Web.Models\obj\Debug\net6.0\Watchlist.Web.Models.AssemblyInfo.cs
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Web.Models\obj\Debug\net6.0\Watchlist.Web.Models.csproj.CoreCompileInputs.cache
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Web.Models\obj\Debug\net6.0\Watchlist.Web.Models.dll
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Web.Models\obj\Debug\net6.0\refint\Watchlist.Web.Models.dll
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Web.Models\obj\Debug\net6.0\Watchlist.Web.Models.pdb
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist.Web.Models\obj\Debug\net6.0\ref\Watchlist.Web.Models.dll
