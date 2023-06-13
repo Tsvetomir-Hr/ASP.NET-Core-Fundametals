@@ -52,5 +52,22 @@ namespace Watchlist.Services
                  .ToListAsync();
 
         }
+
+        public async Task<IEnumerable<AllMoviesViewModel>> GetWatchedMoviesAsync(string userId)
+        {
+            return await context.Movies
+                  .Include(m => m.UsersMovies)
+                  .Where(m => m.UsersMovies.Any(um => um.UserId == userId))
+                  .Select(m => new AllMoviesViewModel()
+                  {
+                      Id = m.Id,
+                      Title = m.Title,
+                      DIrector = m.Director,
+                      Rating = m.Rating,
+                      Genre = m.Genre.Name,
+                      ImageUrl = m.ImageUrl
+                  }).ToListAsync();
+
+        }
     }
 }

@@ -6,9 +6,13 @@ namespace Watchlist.Services.Contracts
     {
 
         Task<IEnumerable<AllMoviesViewModel>> GetAllMovieAsync();
+        Task<IEnumerable<AllMoviesViewModel>> GetWatchedMoviesAsync(string userId);
+
+
         Task<IEnumerable<GenreViewModel>> GetAllGenresAsync();
 
         Task AddMovieAsync(AddMovieViewModel model);
+
 
     }
 }

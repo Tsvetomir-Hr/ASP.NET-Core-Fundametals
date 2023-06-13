@@ -37,5 +37,17 @@ namespace Watchlist.Controllers
             await movieService.AddMovieAsync(model);
             return RedirectToAction("All", "Movies");
         }
+        [HttpGet]
+        public async Task<IActionResult> Watched()
+        {
+            string userId = GetUserIdAsync();
+            if (userId == null)
+            {
+                return RedirectToAction("All", "Movies");
+            }
+            var models = await movieService.GetWatchedMoviesAsync(userId);
+
+            return View(models);
+        }
     }
 }

@@ -7,9 +7,9 @@ namespace Watchlist.Controllers
     [Authorize]
     public class BaseController : Controller
     {
-       protected string GetUserId()
+       protected string GetUserIdAsync()
         {
-            return User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            return User?.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? null;
         }
     }
 }
