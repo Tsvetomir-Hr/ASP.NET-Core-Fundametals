@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MessagePack;
+using Microsoft.AspNetCore.Mvc;
 using Watchlist.Services.Contracts;
 using Watchlist.Web.Models;
 
@@ -65,6 +66,18 @@ namespace Watchlist.Controllers
             await movieService.DeleteMovieFromCollectionAsync(userId, movieId);
 
             return RedirectToAction(nameof(Watched));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int movieId)
+        {
+
+            var model = await movieService.GetMovieByIdAsync(movieId);
+
+            model.Genres = await movieService.GetAllGenresAsync();
+
+            return View(model);
+
         }
     }
 }

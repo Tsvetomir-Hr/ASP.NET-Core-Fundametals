@@ -52,7 +52,6 @@ namespace Watchlist.Services
         {
             var user = await context.Users.FindAsync(userId);
 
-
             var movieToDelete = await context.UserMovie
                 .FirstOrDefaultAsync(um => um.UserId == userId && um.MovieId == id);
 
@@ -63,8 +62,11 @@ namespace Watchlist.Services
 
             }
 
+        }
 
-
+        public Task EditMovieAsync(AddMovieViewModel model)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<IEnumerable<GenreViewModel>> GetAllGenresAsync()
@@ -88,6 +90,23 @@ namespace Watchlist.Services
                 ImageUrl = m.ImageUrl
             })
                  .ToListAsync();
+
+        }
+
+        public async Task<AddMovieViewModel?> GetMovieByIdAsync(int movieId)
+        {
+            return await context.Movies
+                .Where(m=>m.Id==movieId)
+                .Select(m => new AddMovieViewModel()
+                {
+                   Title = m.Title,
+                   Director = m.Director,
+                   Rating = m.Rating,
+                   ImageUrl= m.ImageUrl,
+                   GenreId = m.GenreId
+                })
+                .FirstOrDefaultAsync();
+                
 
         }
 
