@@ -49,5 +49,22 @@ namespace Watchlist.Controllers
 
             return View(models);
         }
+        [HttpPost]
+        public async Task<IActionResult> AddToCollection(int movieId)
+        {
+            string userId = GetUserIdAsync();
+            await movieService.AddMovieToCollectionAsync(userId, movieId);
+
+            return RedirectToAction(nameof(All));
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> RemoveFromCollection(int movieId)
+        {
+            string userId = GetUserIdAsync();
+            await movieService.DeleteMovieFromCollectionAsync(userId, movieId);
+
+            return RedirectToAction(nameof(Watched));
+        }
     }
 }

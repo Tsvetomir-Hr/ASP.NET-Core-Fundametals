@@ -13,6 +13,7 @@ namespace Watchlist.Data
 
         public DbSet<Movie> Movies { get; set; } = null!;
         public DbSet<Genre> Genres { get; set; } = null!;
+        public DbSet<UserMovie> UserMovie{ get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

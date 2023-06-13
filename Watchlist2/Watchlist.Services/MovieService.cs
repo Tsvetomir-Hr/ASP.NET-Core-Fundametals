@@ -29,6 +29,44 @@ namespace Watchlist.Services
             await context.SaveChangesAsync();
         }
 
+        public async Task AddMovieToCollectionAsync(string userId, int id)
+        {
+            var user = await context.Users.FindAsync(userId);
+            var movies = await context.Movies
+                .Include(m => m.UsersMovies)
+                .ToListAsync();
+            bool isAlreadyAdded = movies.Any(m => m.UsersMovies.Any(um => um.UserId == userId && um.MovieId == id));
+            if (!isAlreadyAdded)
+            {
+                var userMovie = new UserMovie()
+                {
+                    UserId = userId,
+                    MovieId = id
+                };
+                await context.AddAsync(userMovie);
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public async Task DeleteMovieFromCollectionAsync(string userId, int id)
+        {
+            var user = await context.Users.FindAsync(userId);
+
+
+            var movieToDelete = await context.UserMovie
+                .FirstOrDefaultAsync(um => um.UserId == userId && um.MovieId == id);
+
+            if (movieToDelete != null)
+            {
+                context.UserMovie.Remove(movieToDelete);
+                await context.SaveChangesAsync();
+
+            }
+
+
+
+        }
+
         public async Task<IEnumerable<GenreViewModel>> GetAllGenresAsync()
         {
             return await context.Genres.Select(g => new GenreViewModel()
