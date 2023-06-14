@@ -64,9 +64,20 @@ namespace Watchlist.Services
 
         }
 
-        public Task EditMovieAsync(AddMovieViewModel model)
+        public async Task EditMovieAsync(int id, AddMovieViewModel model)
         {
-            throw new NotImplementedException();
+            var movieToEdit = await context.Movies.FindAsync(id);
+            if (movieToEdit != null)
+            {
+                movieToEdit.Title = model.Title;
+                movieToEdit.Director = model.Director;
+                movieToEdit.Rating = model.Rating;
+                movieToEdit.Rating = model.Rating;
+                movieToEdit.ImageUrl = model.ImageUrl;
+                movieToEdit.GenreId = model.GenreId;
+
+                await context.SaveChangesAsync();
+            }
         }
 
         public async Task<IEnumerable<GenreViewModel>> GetAllGenresAsync()
@@ -96,17 +107,17 @@ namespace Watchlist.Services
         public async Task<AddMovieViewModel?> GetMovieByIdAsync(int movieId)
         {
             return await context.Movies
-                .Where(m=>m.Id==movieId)
+                .Where(m => m.Id == movieId)
                 .Select(m => new AddMovieViewModel()
                 {
-                   Title = m.Title,
-                   Director = m.Director,
-                   Rating = m.Rating,
-                   ImageUrl= m.ImageUrl,
-                   GenreId = m.GenreId
+                    Title = m.Title,
+                    Director = m.Director,
+                    Rating = m.Rating,
+                    ImageUrl = m.ImageUrl,
+                    GenreId = m.GenreId
                 })
                 .FirstOrDefaultAsync();
-                
+
 
         }
 

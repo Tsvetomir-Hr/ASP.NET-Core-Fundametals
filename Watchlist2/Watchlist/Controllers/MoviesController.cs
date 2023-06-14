@@ -69,14 +69,23 @@ namespace Watchlist.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Edit(int movieId)
+        public async Task<IActionResult> Edit(int Id)
         {
 
-            var model = await movieService.GetMovieByIdAsync(movieId);
+            var model = await movieService.GetMovieByIdAsync(Id);
 
             model.Genres = await movieService.GetAllGenresAsync();
 
             return View(model);
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(int Id, AddMovieViewModel model)
+        {
+
+            await movieService.EditMovieAsync(Id, model);
+
+            return RedirectToAction(nameof(All));
 
         }
     }

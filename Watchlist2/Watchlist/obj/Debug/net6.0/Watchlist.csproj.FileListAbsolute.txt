@@ -282,3 +282,5 @@ D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\bin\Debug\net6.0\Watchlist.Data
 D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\bin\Debug\net6.0\Watchlist.Web.Models.pdb
 D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\bin\Debug\net6.0\Watchlist.Services.dll
 D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\bin\Debug\net6.0\Watchlist.Services.pdb
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
+D:\ASP.NET-Core-Fundametals\Watchlist2\Watchlist\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll

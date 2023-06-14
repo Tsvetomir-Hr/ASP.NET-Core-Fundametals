@@ -17,7 +17,7 @@ namespace Watchlist.Services.Contracts
 
         Task DeleteMovieFromCollectionAsync(string userId, int id);
 
-        Task EditMovieAsync(AddMovieViewModel model);
+        Task EditMovieAsync(int id, AddMovieViewModel model);
 
         Task<AddMovieViewModel> GetMovieByIdAsync(int movieId);
 
