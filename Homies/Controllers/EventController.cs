@@ -55,16 +55,16 @@ namespace Homies.Controllers
             {
                 await eventService.AddEventAsync(model, orginizerId);
 
-               
+
             }
             catch (InvalidDataException ex)
             {
                 model.Types = await eventService.GetTypesAsync();
 
-                ModelState.AddModelError("",ex.Message);
+                ModelState.AddModelError("", ex.Message);
                 return View(model);
 
-                
+
             }
 
             return RedirectToAction(nameof(All));
@@ -104,10 +104,25 @@ namespace Homies.Controllers
         {
             if (!ModelState.IsValid)
             {
+                model.Types = await eventService.GetTypesAsync();
+
+                return View(model);
+            }
+            try
+            {
+                await eventService.EditEventAsync(id, model);
+            }
+            catch (InvalidDataException ex)
+            {
+
+                model.Types = await eventService.GetTypesAsync();
+
+                ModelState.AddModelError("", ex.Message);
+
                 return View(model);
             }
 
-            await eventService.EditEventAsync(id, model);
+
 
             return RedirectToAction(nameof(All));
 

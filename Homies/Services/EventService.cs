@@ -17,14 +17,22 @@ namespace Homies.Services
 
         public async Task AddEventAsync(FormEventViewModel model, string userId)
         {
+            var start = DateTime.TryParse(model.Start,out DateTime startDate);
+
+            var end = DateTime.TryParse(model.End, out DateTime endDate);
+
+            if ( start == false || end == false || startDate >= endDate)
+            {
+                throw new InvalidDataException("Invalid data!");
+            }
 
             var eventToAdd = new Event()
             {
 
                 Name = model.Name,
                 Description = model.Description,
-                Start = DateTime.Parse(model.Start),
-                End = DateTime.Parse(model.End),
+                Start = startDate,
+                End = endDate,
                 TypeId = model.TypeId,
                 OrganiserId = userId
 
@@ -35,14 +43,23 @@ namespace Homies.Services
 
         public async Task EditEventAsync(int eventId, FormEventViewModel model)
         {
-            var eventToEdit = await context.Events.FindAsync(eventId);  
-            
+            var eventToEdit = await context.Events.FindAsync(eventId);
+
+            var start = DateTime.TryParse(model.Start, out DateTime startDate);
+
+            var end = DateTime.TryParse(model.End, out DateTime endDate);
+
+            if (start == false || end == false || startDate >= endDate)
+            {
+                throw new InvalidDataException("Invalid data!");
+            }
+
             if (eventToEdit != null)
             {
                 eventToEdit.Name = model.Name;
                 eventToEdit.Description = model.Description;
-                eventToEdit.Start = DateTime.Parse(model.Start);
-                eventToEdit.End = DateTime.Parse(model.End);
+                eventToEdit.Start = startDate;
+                eventToEdit.End = endDate;
                 eventToEdit.TypeId = model.TypeId;
 
             }
