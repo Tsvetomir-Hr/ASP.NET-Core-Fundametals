@@ -1,0 +1,14 @@
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\bin\Debug\net6.0\HouseRentingSystem.Data.deps.json
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\bin\Debug\net6.0\HouseRentingSystem.Data.runtimeconfig.json
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\bin\Debug\net6.0\HouseRentingSystem.Data.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\bin\Debug\net6.0\HouseRentingSystem.Data.pdb
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\obj\Debug\net6.0\HouseRentingSystem.Data.csproj.AssemblyReference.cache
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\obj\Debug\net6.0\HouseRentingSystem.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\obj\Debug\net6.0\HouseRentingSystem.Data.AssemblyInfoInputs.cache
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\obj\Debug\net6.0\HouseRentingSystem.Data.AssemblyInfo.cs
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\obj\Debug\net6.0\HouseRentingSystem.Data.csproj.CoreCompileInputs.cache
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\obj\Debug\net6.0\HouseRentingSystem.Data.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\obj\Debug\net6.0\refint\HouseRentingSystem.Data.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\obj\Debug\net6.0\HouseRentingSystem.Data.pdb
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\obj\Debug\net6.0\HouseRentingSystem.Data.genruntimeconfig.cache
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\obj\Debug\net6.0\ref\HouseRentingSystem.Data.dll
