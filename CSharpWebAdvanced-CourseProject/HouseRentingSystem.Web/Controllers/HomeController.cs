@@ -2,16 +2,15 @@
 
 namespace HouseRentingSystem.Web.Controllers
 {
+    using HouseRentingSystem.Web.ViewModels.Home;
+    using Microsoft.AspNetCore.Mvc;
     using System.Diagnostics;
 
-    using Microsoft.AspNetCore.Mvc;
-
-    using HouseRentingSystem.Web.Models;
     public class HomeController : Controller
-    {      
+    {
         public HomeController()
         {
-           
+
         }
 
         public IActionResult Index()

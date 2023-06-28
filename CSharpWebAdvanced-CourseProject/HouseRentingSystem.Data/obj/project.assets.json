@@ -864,6 +864,30 @@
             "rid": "win"
           }
         }
+      },
+      "HouseRentingSystem.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/HouseRentingSystem.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HouseRentingSystem.Common.dll": {}
+        }
+      },
+      "HouseRentingSystem.Data.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "HouseRentingSystem.Common": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.13"
+        },
+        "compile": {
+          "bin/placeholder/HouseRentingSystem.Data.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HouseRentingSystem.Data.Models.dll": {}
+        }
       }
     }
   },
@@ -2176,10 +2200,22 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "HouseRentingSystem.Common/1.0.0": {
+      "type": "project",
+      "path": "../HouseRentingSystem.Common/HouseRentingSystem.Common.csproj",
+      "msbuildProject": "../HouseRentingSystem.Common/HouseRentingSystem.Common.csproj"
+    },
+    "HouseRentingSystem.Data.Models/1.0.0": {
+      "type": "project",
+      "path": "../HouseRentingSystem.Models/HouseRentingSystem.Data.Models.csproj",
+      "msbuildProject": "../HouseRentingSystem.Models/HouseRentingSystem.Data.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "HouseRentingSystem.Common >= 1.0.0",
+      "HouseRentingSystem.Data.Models >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.13",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.13",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.13"
@@ -2211,7 +2247,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Common\\HouseRentingSystem.Common.csproj": {
+              "projectPath": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Common\\HouseRentingSystem.Common.csproj"
+            },
+            "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Models\\HouseRentingSystem.Data.Models.csproj": {
+              "projectPath": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Models\\HouseRentingSystem.Data.Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,4 +1,4 @@
-namespace HouseRentingSystem.Web.Models
+namespace HouseRentingSystem.Web.ViewModels.Home
 {
     public class ErrorViewModel
     {

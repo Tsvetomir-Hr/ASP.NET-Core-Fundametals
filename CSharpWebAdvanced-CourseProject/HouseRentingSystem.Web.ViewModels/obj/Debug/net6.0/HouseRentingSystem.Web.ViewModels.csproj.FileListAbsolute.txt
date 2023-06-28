@@ -1,0 +1,12 @@
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\bin\Debug\net6.0\HouseRentingSystem.Web.ViewModels.deps.json
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\bin\Debug\net6.0\HouseRentingSystem.Web.ViewModels.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\bin\Debug\net6.0\HouseRentingSystem.Web.ViewModels.pdb
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\obj\Debug\net6.0\HouseRentingSystem.Web.ViewModels.csproj.AssemblyReference.cache
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\obj\Debug\net6.0\HouseRentingSystem.Web.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\obj\Debug\net6.0\HouseRentingSystem.Web.ViewModels.AssemblyInfoInputs.cache
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\obj\Debug\net6.0\HouseRentingSystem.Web.ViewModels.AssemblyInfo.cs
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\obj\Debug\net6.0\HouseRentingSystem.Web.ViewModels.csproj.CoreCompileInputs.cache
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\obj\Debug\net6.0\HouseRentingSystem.Web.ViewModels.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\obj\Debug\net6.0\refint\HouseRentingSystem.Web.ViewModels.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\obj\Debug\net6.0\HouseRentingSystem.Web.ViewModels.pdb
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\obj\Debug\net6.0\ref\HouseRentingSystem.Web.ViewModels.dll

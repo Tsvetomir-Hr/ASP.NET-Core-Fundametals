@@ -15,4 +15,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HouseRentingSystem.Common\HouseRentingSystem.Common.csproj" />
+    <ProjectReference Include="..\HouseRentingSystem.Models\HouseRentingSystem.Data.Models.csproj" />
+  </ItemGroup>
+
 </Project>
