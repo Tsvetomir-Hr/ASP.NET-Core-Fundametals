@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseRentingSystem.Web", "HouseRentingSystem.Web\HouseRentingSystem.Web.csproj", "{35518C2E-761D-4DE3-97A7-5F46F9D0BAC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseRentingSystem.Common", "HouseRentingSystem.Common\HouseRentingSystem.Common.csproj", "{022E9CD4-FBE6-4F06-BD99-CD7C3134C5DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35518C2E-761D-4DE3-97A7-5F46F9D0BAC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35518C2E-761D-4DE3-97A7-5F46F9D0BAC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35518C2E-761D-4DE3-97A7-5F46F9D0BAC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35518C2E-761D-4DE3-97A7-5F46F9D0BAC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{022E9CD4-FBE6-4F06-BD99-CD7C3134C5DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022E9CD4-FBE6-4F06-BD99-CD7C3134C5DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022E9CD4-FBE6-4F06-BD99-CD7C3134C5DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022E9CD4-FBE6-4F06-BD99-CD7C3134C5DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84475CD8-6FED-4160-87EF-88EA3299DD7D}
+	EndGlobalSection
+EndGlobal
