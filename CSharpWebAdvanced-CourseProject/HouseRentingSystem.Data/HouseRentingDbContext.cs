@@ -1,12 +1,12 @@
-﻿namespace HouseRentingSystem.Web.Data
+﻿namespace HouseRentingSystem.Data
 {
-
-
     using HouseRentingSystem.Data.Models;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
     using Microsoft.EntityFrameworkCore;
+    using System.Reflection;
+
     public class HouseRentingDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
     {
         public HouseRentingDbContext(DbContextOptions<HouseRentingDbContext> options)
@@ -24,8 +24,15 @@
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-           
-                
+
+            Assembly configAssembly = Assembly.GetAssembly(typeof(HouseRentingDbContext)) ??
+                Assembly.GetExecutingAssembly();
+
+            builder.ApplyConfigurationsFromAssembly(configAssembly);
+
+            builder.Entity<House>()
+                .Property(h => h.PricePerMonth)
+                .HasPrecision(18, 2);
 
             base.OnModelCreating(builder);
         }

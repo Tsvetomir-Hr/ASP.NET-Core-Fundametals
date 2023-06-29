@@ -2,20 +2,26 @@
 
 namespace HouseRentingSystem.Web.Controllers
 {
+    using HouseRentingSystem.Services.Interfaces;
     using HouseRentingSystem.Web.ViewModels.Home;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using System.Diagnostics;
 
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        public HomeController()
+        private readonly IHouseService houseService;
+        public HomeController(IHouseService _houseService)
         {
-
+            houseService = _houseService;
         }
 
-        public IActionResult Index()
+        [AllowAnonymous]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var lastThreeHouses = await houseService.LastThreeHousesAsync();
+
+            return View(lastThreeHouses);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -10,6 +10,7 @@
         {
             this.Houses = new HashSet<House>();
         }
+
         [Key]
         public int Id { get; set; }
 

@@ -80,3 +80,10 @@ D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.W
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Data.pdb
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Web.ViewModels.dll
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Web.ViewModels.pdb
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Data.Models.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Data.Models.pdb
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\appsettings.Production.json
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Services.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Web.Infrastructure.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Services.pdb
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Web.Infrastructure.pdb

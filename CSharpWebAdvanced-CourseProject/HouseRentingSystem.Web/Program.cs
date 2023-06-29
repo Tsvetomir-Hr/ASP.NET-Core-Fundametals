@@ -1,5 +1,8 @@
+using HouseRentingSystem.Data;
 using HouseRentingSystem.Data.Models;
-using HouseRentingSystem.Web.Data;
+using HouseRentingSystem.Services;
+using HouseRentingSystem.Services.Interfaces;
+using HouseRentingSystem.Web.Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -11,10 +14,20 @@ builder.Services.AddDbContext<HouseRentingDbContext>(options =>
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 {
-    options.SignIn.RequireConfirmedAccount = true;
+    options.SignIn.RequireConfirmedAccount = builder.Configuration.GetValue<bool>("Identity:SignIn:RequireConfirmedAccount");
+
+    options.Password.RequireLowercase = builder.Configuration.GetValue<bool>("Identity:Password:RequireLowercase");
+
+    options.Password.RequireUppercase = builder.Configuration.GetValue<bool>("Identity:Password:RequireUppercase");
+
+    options.Password.RequireNonAlphanumeric = builder.Configuration.GetValue<bool>("Identity:Password:RequireNonAlphanumeric");
+
+    options.Password.RequiredLength = builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
 
 })
     .AddEntityFrameworkStores<HouseRentingDbContext>();
+
+builder.Services.AddApplicationServices(typeof(IHouseService));
 
 builder.Services.AddControllersWithViews();
 
@@ -29,7 +42,7 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseExceptionHandler("/Home/Error");
-    
+
     app.UseHsts();
 }
 

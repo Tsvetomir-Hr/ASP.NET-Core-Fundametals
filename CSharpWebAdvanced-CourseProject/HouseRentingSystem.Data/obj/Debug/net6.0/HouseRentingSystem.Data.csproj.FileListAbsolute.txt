@@ -12,3 +12,8 @@ D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.D
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\obj\Debug\net6.0\HouseRentingSystem.Data.pdb
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\obj\Debug\net6.0\HouseRentingSystem.Data.genruntimeconfig.cache
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\obj\Debug\net6.0\ref\HouseRentingSystem.Data.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\bin\Debug\net6.0\HouseRentingSystem.Common.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\bin\Debug\net6.0\HouseRentingSystem.Data.Models.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\bin\Debug\net6.0\HouseRentingSystem.Common.pdb
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\bin\Debug\net6.0\HouseRentingSystem.Data.Models.pdb
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Data\obj\Debug\net6.0\HouseRentingSystem.Data.csproj.CopyComplete

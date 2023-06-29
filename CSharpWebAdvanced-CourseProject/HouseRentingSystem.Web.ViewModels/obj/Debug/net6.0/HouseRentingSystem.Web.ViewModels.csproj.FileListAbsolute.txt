@@ -10,3 +10,6 @@ D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.W
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\obj\Debug\net6.0\refint\HouseRentingSystem.Web.ViewModels.dll
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\obj\Debug\net6.0\HouseRentingSystem.Web.ViewModels.pdb
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\obj\Debug\net6.0\ref\HouseRentingSystem.Web.ViewModels.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\bin\Debug\net6.0\HouseRentingSystem.Common.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\bin\Debug\net6.0\HouseRentingSystem.Common.pdb
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web.ViewModels\obj\Debug\net6.0\HouseRentingSystem.Web.ViewModels.csproj.CopyComplete

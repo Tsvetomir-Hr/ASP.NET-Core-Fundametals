@@ -3,19 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseRentingSystem.Web", "HouseRentingSystem.Web\HouseRentingSystem.Web.csproj", "{35518C2E-761D-4DE3-97A7-5F46F9D0BAC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseRentingSystem.Web", "HouseRentingSystem.Web\HouseRentingSystem.Web.csproj", "{35518C2E-761D-4DE3-97A7-5F46F9D0BAC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseRentingSystem.Common", "HouseRentingSystem.Common\HouseRentingSystem.Common.csproj", "{022E9CD4-FBE6-4F06-BD99-CD7C3134C5DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseRentingSystem.Common", "HouseRentingSystem.Common\HouseRentingSystem.Common.csproj", "{022E9CD4-FBE6-4F06-BD99-CD7C3134C5DC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{3B8F3619-DEA6-400B-AB8F-B33056E4C1DB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{048AF2F8-DAB1-44CA-B55A-40F230588721}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseRentingSystem.Data", "HouseRentingSystem.Data\HouseRentingSystem.Data.csproj", "{F0D4472C-C770-428F-AB21-8300E436D583}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseRentingSystem.Data", "HouseRentingSystem.Data\HouseRentingSystem.Data.csproj", "{F0D4472C-C770-428F-AB21-8300E436D583}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseRentingSystem.Data.Models", "HouseRentingSystem.Models\HouseRentingSystem.Data.Models.csproj", "{6B34D077-0757-48EB-BF92-2491765B5662}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseRentingSystem.Data.Models", "HouseRentingSystem.Models\HouseRentingSystem.Data.Models.csproj", "{6B34D077-0757-48EB-BF92-2491765B5662}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseRentingSystem.Web.ViewModels", "HouseRentingSystem.Web.ViewModels\HouseRentingSystem.Web.ViewModels.csproj", "{060E0542-1C73-421B-A0DF-C6919B8F675A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HouseRentingSystem.Web.ViewModels", "HouseRentingSystem.Web.ViewModels\HouseRentingSystem.Web.ViewModels.csproj", "{060E0542-1C73-421B-A0DF-C6919B8F675A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{D7B855BD-38B2-4F13-A913-173EA8424DFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseRentingSystem.Services", "HouseRentingSystem.Services\HouseRentingSystem.Services.csproj", "{A13B75ED-D1AF-4151-A99D-3892B45E49A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseRentingSystem.Web.Infrastructure", "HouseRentingSystem.Web.Infrastructure\HouseRentingSystem.Web.Infrastructure.csproj", "{B1AB14B5-6C22-4E9C-AA27-D312977EF95F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +49,14 @@ Global
 		{060E0542-1C73-421B-A0DF-C6919B8F675A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{060E0542-1C73-421B-A0DF-C6919B8F675A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{060E0542-1C73-421B-A0DF-C6919B8F675A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A13B75ED-D1AF-4151-A99D-3892B45E49A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A13B75ED-D1AF-4151-A99D-3892B45E49A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A13B75ED-D1AF-4151-A99D-3892B45E49A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A13B75ED-D1AF-4151-A99D-3892B45E49A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1AB14B5-6C22-4E9C-AA27-D312977EF95F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1AB14B5-6C22-4E9C-AA27-D312977EF95F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1AB14B5-6C22-4E9C-AA27-D312977EF95F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1AB14B5-6C22-4E9C-AA27-D312977EF95F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +66,8 @@ Global
 		{F0D4472C-C770-428F-AB21-8300E436D583} = {048AF2F8-DAB1-44CA-B55A-40F230588721}
 		{6B34D077-0757-48EB-BF92-2491765B5662} = {048AF2F8-DAB1-44CA-B55A-40F230588721}
 		{060E0542-1C73-421B-A0DF-C6919B8F675A} = {3B8F3619-DEA6-400B-AB8F-B33056E4C1DB}
+		{A13B75ED-D1AF-4151-A99D-3892B45E49A6} = {D7B855BD-38B2-4F13-A913-173EA8424DFC}
+		{B1AB14B5-6C22-4E9C-AA27-D312977EF95F} = {3B8F3619-DEA6-400B-AB8F-B33056E4C1DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {84475CD8-6FED-4160-87EF-88EA3299DD7D}
