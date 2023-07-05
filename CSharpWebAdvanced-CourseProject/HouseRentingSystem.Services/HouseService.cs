@@ -42,9 +42,9 @@ namespace HouseRentingSystem.Services
             houseQuery = queryModel.HouseSorting switch
             {
                 HouseSorting.Newest => houseQuery
-                .OrderBy(h => h.CreatedOn),
-                HouseSorting.Oldest => houseQuery
                 .OrderByDescending(h => h.CreatedOn),
+                HouseSorting.Oldest => houseQuery
+                .OrderBy(h => h.CreatedOn),
                 HouseSorting.PriceAscending => houseQuery
                 .OrderBy(h => h.PricePerMonth),
                 HouseSorting.PriceDescending => houseQuery

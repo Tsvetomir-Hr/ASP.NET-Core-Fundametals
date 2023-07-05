@@ -25,7 +25,7 @@
 
         public int CurrentPage { get; set; }
 
-        [Display(Name = "Number of Houses Per Page")]
+        [Display(Name = "Number of Houses")]
         public int HousesPerPage { get; set; }
 
         public int TotalHouses { get; set; }
