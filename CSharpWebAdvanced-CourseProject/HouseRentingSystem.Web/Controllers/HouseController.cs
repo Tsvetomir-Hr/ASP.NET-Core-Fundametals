@@ -14,11 +14,12 @@ namespace HouseRentingSystem.Web.Controllers
         }
 
         [AllowAnonymous]
-        public async Task<IActionResult> All()
+        public async Task<IActionResult> Add()
         {
-            var allhouses = await houseService.LastThreeHousesAsync();
+            
 
-            return View(allhouses);
+            return View();
         }
+
     }
 }
