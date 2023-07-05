@@ -5,20 +5,45 @@ namespace HouseRentingSystem.Web.Controllers
     using Microsoft.AspNetCore.Mvc;
 
     using HouseRentingSystem.Services.Interfaces;
+    using HouseRentingSystem.Web.ViewModels.House;
+
+    using static Common.NotificationMessageConstants;
+
     public class HouseController : BaseController
     {
         private readonly IHouseService houseService;
-        public HouseController(IHouseService _houseService)
+        private readonly ICategoryService categoryService;
+        private readonly IAgentService agentService;
+
+
+        public HouseController(
+            IHouseService houseService,
+            ICategoryService categoryService,
+            IAgentService agentService)
         {
-            houseService = _houseService;
+            this.houseService = houseService;
+            this.categoryService = categoryService;
+            this.agentService = agentService;
+
         }
 
-        [AllowAnonymous]
+
+        [HttpGet]
         public async Task<IActionResult> Add()
         {
-            
+            bool isAgent = await agentService.AgentExistsByUserIdAsync(GetUserId()!);
+            if (!isAgent)
+            {
+                this.TempData[ErrorMessage] = "You must become an agent in order to add new houses!";
 
-            return View();
+                return RedirectToAction("Become", "Agent");
+            }
+            HouseFormModel model = new HouseFormModel()
+            {
+                Categories = await categoryService.AllCategoriesAsync()
+            };
+
+            return View(model);
         }
 
     }

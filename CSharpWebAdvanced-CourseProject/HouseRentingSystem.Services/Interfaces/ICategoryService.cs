@@ -1,6 +1,10 @@
 ﻿namespace HouseRentingSystem.Services.Interfaces
 {
-    internal interface ICategoryService
+    using HouseRentingSystem.Web.ViewModels.Category;
+
+    public interface ICategoryService
     {
+
+        Task<IEnumerable<HouseSelectCategoryFormModel>> AllCategoriesAsync();
     }
 }
