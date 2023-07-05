@@ -75,6 +75,45 @@ namespace HouseRentingSystem.Services
             };
         }
 
+        public async Task<IEnumerable<HouseAllViewModel>> AllByAgentIdAsync(string agentId)
+        {
+            IEnumerable<HouseAllViewModel> models = await context
+                .Houses
+                .Where(h => h.AgentId.ToString() == agentId && h.isActive)
+                .Select(h => new HouseAllViewModel()
+                {
+                    Id = h.Id.ToString(),
+                    Title = h.Title,
+                    Address = h.Address,
+                    ImageUrl = h.ImageUrl,
+                    PricePerMonth = h.PricePerMonth,
+                    IsRented = h.RenterId.HasValue
+                }).ToArrayAsync();
+
+            return models;
+
+        }
+
+        public async  Task<IEnumerable<HouseAllViewModel>> AllByUserIdAsync(string userid)
+        {
+            IEnumerable<HouseAllViewModel> models = await context
+                .Houses
+                .Where(h => h.RenterId.HasValue &&
+                h.RenterId.ToString() == userid 
+                && h.isActive)
+                .Select(h => new HouseAllViewModel()
+                {
+                    Id = h.Id.ToString(),
+                    Title = h.Title,
+                    Address = h.Address,
+                    ImageUrl = h.ImageUrl,
+                    PricePerMonth = h.PricePerMonth,
+                    IsRented = h.RenterId.HasValue
+                }).ToArrayAsync();
+
+            return models;
+        }
+
         public async Task CreateAsync(HouseFormModel formModel, string userId)
         {
             House house = new House()
@@ -98,7 +137,7 @@ namespace HouseRentingSystem.Services
 
             return await context.Houses
                 .OrderByDescending(h => h.CreatedOn)
-                .Where(h=>h.isActive)
+                .Where(h => h.isActive)
                 .Take(3)
                 .Select(h => new IndexViewModel
                 {

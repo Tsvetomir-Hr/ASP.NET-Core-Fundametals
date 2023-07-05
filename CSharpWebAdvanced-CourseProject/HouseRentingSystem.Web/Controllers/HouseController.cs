@@ -105,5 +105,25 @@ namespace HouseRentingSystem.Web.Controllers
 
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Mine()
+        {
+            List<HouseAllViewModel> myHouses = new List<HouseAllViewModel>();
+
+            string userId = GetUserId();
+            bool isUserAgent = await this.agentService
+                .AgentExistsByUserIdAsync(userId!);
+            if (isUserAgent)
+            {
+                string? agentId = await this.agentService.GetAgentIdByUserIdAsync(userId);
+
+                myHouses.AddRange(await houseService.AllByAgentIdAsync(agentId!));
+
+            }
+            myHouses.AddRange(await this.houseService.AllByUserIdAsync(userId!));
+
+            return View(myHouses);
+        }
+
     }
 }
