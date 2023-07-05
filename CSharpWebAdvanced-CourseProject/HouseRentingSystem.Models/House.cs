@@ -32,6 +32,8 @@ namespace HouseRentingSystem.Data.Models
 
         public DateTime CreatedOn { get; set; }
 
+        public bool isActive { get; set; }
+
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; } = null!;
 

@@ -53,6 +53,7 @@ namespace HouseRentingSystem.Services
                 .ThenByDescending(h => h.CreatedOn)
             };
             IEnumerable<HouseAllViewModel> allhouses = await houseQuery
+                .Where(h => h.isActive)
                 .Skip((queryModel.CurrentPage - 1) * queryModel.HousesPerPage)
                 .Take(queryModel.HousesPerPage)
                 .Select(h => new HouseAllViewModel()
@@ -97,6 +98,7 @@ namespace HouseRentingSystem.Services
 
             return await context.Houses
                 .OrderByDescending(h => h.CreatedOn)
+                .Where(h=>h.isActive)
                 .Take(3)
                 .Select(h => new IndexViewModel
                 {
