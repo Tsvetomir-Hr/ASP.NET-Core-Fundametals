@@ -24,7 +24,10 @@
         public HouseSorting HouseSorting { get; set; }
 
         public int CurrentPage { get; set; }
+
+        [Display(Name = "Number of Houses Per Page")]
         public int HousesPerPage { get; set; }
+
         public int TotalHouses { get; set; }
 
         public IEnumerable<string> Categories { get; set; }

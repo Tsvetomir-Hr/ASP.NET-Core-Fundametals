@@ -46,9 +46,9 @@ namespace HouseRentingSystem.Services
                 HouseSorting.Oldest => houseQuery
                 .OrderByDescending(h => h.CreatedOn),
                 HouseSorting.PriceAscending => houseQuery
-                .OrderBy(h => h.CreatedOn),
+                .OrderBy(h => h.PricePerMonth),
                 HouseSorting.PriceDescending => houseQuery
-                .OrderByDescending(h => h.CreatedOn),
+                .OrderByDescending(h => h.PricePerMonth),
                 _ => houseQuery.OrderBy(h => h.RenterId != null)
                 .ThenByDescending(h => h.CreatedOn)
             };
