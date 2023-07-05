@@ -19,3 +19,5 @@ D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.S
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services\obj\Debug\net6.0\refint\HouseRentingSystem.Services.dll
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services\obj\Debug\net6.0\HouseRentingSystem.Services.pdb
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services\obj\Debug\net6.0\ref\HouseRentingSystem.Services.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services\bin\Debug\net6.0\HouseRentingSystem.Services.Data.Models.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services\bin\Debug\net6.0\HouseRentingSystem.Services.Data.Models.pdb

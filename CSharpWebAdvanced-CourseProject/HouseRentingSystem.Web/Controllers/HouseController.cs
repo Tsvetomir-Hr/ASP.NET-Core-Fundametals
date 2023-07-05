@@ -8,6 +8,7 @@ namespace HouseRentingSystem.Web.Controllers
     using HouseRentingSystem.Web.ViewModels.House;
 
     using static Common.NotificationMessageConstants;
+    using HouseRentingSystem.Services.Data.Models.House;
 
     public class HouseController : BaseController
     {
@@ -28,10 +29,17 @@ namespace HouseRentingSystem.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> All()
+        [AllowAnonymous]
+        public async Task<IActionResult> All([FromQuery] AllHousesQueryModel queryModel)
         {
+            AllHousesFilteredAndPagedServiceModel serviceModel = await this.houseService.AllAsync(queryModel);
 
-            return this.Ok();
+            queryModel.Houses = serviceModel.Houses;
+            queryModel.TotalHouses = serviceModel.TotalHousesCount;
+            queryModel.Categories = await categoryService.AllCategoryNamesAsync();
+
+
+            return View(queryModel);
         }
 
 

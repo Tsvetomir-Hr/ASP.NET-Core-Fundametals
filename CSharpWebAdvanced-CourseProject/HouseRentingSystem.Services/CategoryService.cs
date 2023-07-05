@@ -27,6 +27,15 @@
                  .ToArrayAsync();
         }
 
+        public async Task<IEnumerable<string>> AllCategoryNamesAsync()
+        {
+            return await context.Categories
+                 .Select(c => c.Name)
+                 .ToArrayAsync();
+
+            
+        }
+
         public async Task<bool> ExistByIdAsync(int id)
         {
             return await context.Categories.AnyAsync(c => c.Id == id);

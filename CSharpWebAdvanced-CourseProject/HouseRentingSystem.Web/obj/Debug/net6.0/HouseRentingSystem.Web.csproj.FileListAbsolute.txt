@@ -97,3 +97,5 @@ D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.W
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Services.Data.Models.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Services.Data.Models.pdb

@@ -202,6 +202,65 @@
         }
       }
     },
+    "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Services.Data.Models\\HouseRentingSystem.Services.Data.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Services.Data.Models\\HouseRentingSystem.Services.Data.Models.csproj",
+        "projectName": "HouseRentingSystem.Services.Data.Models",
+        "projectPath": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Services.Data.Models\\HouseRentingSystem.Services.Data.Models.csproj",
+        "packagesPath": "C:\\Users\\cveto\\.nuget\\packages\\",
+        "outputPath": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Services.Data.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\cveto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Web.ViewModels\\HouseRentingSystem.Web.ViewModels.csproj": {
+                "projectPath": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Web.ViewModels\\HouseRentingSystem.Web.ViewModels.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Services\\HouseRentingSystem.Services.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -234,6 +293,9 @@
               },
               "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Models\\HouseRentingSystem.Data.Models.csproj": {
                 "projectPath": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Models\\HouseRentingSystem.Data.Models.csproj"
+              },
+              "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Services.Data.Models\\HouseRentingSystem.Services.Data.Models.csproj": {
+                "projectPath": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Services.Data.Models\\HouseRentingSystem.Services.Data.Models.csproj"
               },
               "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Web.ViewModels\\HouseRentingSystem.Web.ViewModels.csproj": {
                 "projectPath": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Web.ViewModels\\HouseRentingSystem.Web.ViewModels.csproj"
@@ -430,6 +492,9 @@
               },
               "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Models\\HouseRentingSystem.Data.Models.csproj": {
                 "projectPath": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Models\\HouseRentingSystem.Data.Models.csproj"
+              },
+              "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Services.Data.Models\\HouseRentingSystem.Services.Data.Models.csproj": {
+                "projectPath": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Services.Data.Models\\HouseRentingSystem.Services.Data.Models.csproj"
               },
               "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Services\\HouseRentingSystem.Services.csproj": {
                 "projectPath": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Services\\HouseRentingSystem.Services.csproj"

@@ -1,0 +1,109 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "HouseRentingSystem.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/HouseRentingSystem.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HouseRentingSystem.Common.dll": {}
+        }
+      },
+      "HouseRentingSystem.Web.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "HouseRentingSystem.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HouseRentingSystem.Web.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HouseRentingSystem.Web.ViewModels.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HouseRentingSystem.Common/1.0.0": {
+      "type": "project",
+      "path": "../HouseRentingSystem.Common/HouseRentingSystem.Common.csproj",
+      "msbuildProject": "../HouseRentingSystem.Common/HouseRentingSystem.Common.csproj"
+    },
+    "HouseRentingSystem.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../HouseRentingSystem.Web.ViewModels/HouseRentingSystem.Web.ViewModels.csproj",
+      "msbuildProject": "../HouseRentingSystem.Web.ViewModels/HouseRentingSystem.Web.ViewModels.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "HouseRentingSystem.Web.ViewModels >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\cveto\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Services.Data.Models\\HouseRentingSystem.Services.Data.Models.csproj",
+      "projectName": "HouseRentingSystem.Services.Data.Models",
+      "projectPath": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Services.Data.Models\\HouseRentingSystem.Services.Data.Models.csproj",
+      "packagesPath": "C:\\Users\\cveto\\.nuget\\packages\\",
+      "outputPath": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Services.Data.Models\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\cveto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Web.ViewModels\\HouseRentingSystem.Web.ViewModels.csproj": {
+              "projectPath": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Web.ViewModels\\HouseRentingSystem.Web.ViewModels.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

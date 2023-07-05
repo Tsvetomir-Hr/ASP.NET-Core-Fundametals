@@ -2061,10 +2061,19 @@
           "HouseRentingSystem.Common": "1.0.0",
           "HouseRentingSystem.Data": "1.0.0",
           "HouseRentingSystem.Data.Models": "1.0.0",
+          "HouseRentingSystem.Services.Data.Models": "1.0.0",
           "HouseRentingSystem.Web.ViewModels": "1.0.0"
         },
         "runtime": {
           "HouseRentingSystem.Services.dll": {}
+        }
+      },
+      "HouseRentingSystem.Services.Data.Models/1.0.0": {
+        "dependencies": {
+          "HouseRentingSystem.Web.ViewModels": "1.0.0"
+        },
+        "runtime": {
+          "HouseRentingSystem.Services.Data.Models.dll": {}
         }
       },
       "HouseRentingSystem.Web.ViewModels/1.0.0": {
@@ -3401,6 +3410,11 @@
       "sha512": ""
     },
     "HouseRentingSystem.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HouseRentingSystem.Services.Data.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

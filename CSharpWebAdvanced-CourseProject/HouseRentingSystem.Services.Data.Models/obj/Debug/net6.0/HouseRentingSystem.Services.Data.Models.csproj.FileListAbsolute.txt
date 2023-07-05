@@ -1,0 +1,17 @@
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\bin\Debug\net6.0\HouseRentingSystem.Services.Data.Models.deps.json
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\bin\Debug\net6.0\HouseRentingSystem.Services.Data.Models.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\bin\Debug\net6.0\HouseRentingSystem.Services.Data.Models.pdb
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\bin\Debug\net6.0\HouseRentingSystem.Common.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\bin\Debug\net6.0\HouseRentingSystem.Web.ViewModels.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\bin\Debug\net6.0\HouseRentingSystem.Web.ViewModels.pdb
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\bin\Debug\net6.0\HouseRentingSystem.Common.pdb
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\obj\Debug\net6.0\HouseRentingSystem.Services.Data.Models.csproj.AssemblyReference.cache
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\obj\Debug\net6.0\HouseRentingSystem.Services.Data.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\obj\Debug\net6.0\HouseRentingSystem.Services.Data.Models.AssemblyInfoInputs.cache
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\obj\Debug\net6.0\HouseRentingSystem.Services.Data.Models.AssemblyInfo.cs
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\obj\Debug\net6.0\HouseRentingSystem.Services.Data.Models.csproj.CoreCompileInputs.cache
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\obj\Debug\net6.0\HouseRentingSystem.Services.Data.Models.csproj.CopyComplete
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\obj\Debug\net6.0\HouseRentingSystem.Services.Data.Models.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\obj\Debug\net6.0\refint\HouseRentingSystem.Services.Data.Models.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\obj\Debug\net6.0\HouseRentingSystem.Services.Data.Models.pdb
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Services.Data.Models\obj\Debug\net6.0\ref\HouseRentingSystem.Services.Data.Models.dll
