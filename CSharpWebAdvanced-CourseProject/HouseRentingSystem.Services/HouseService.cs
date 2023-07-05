@@ -132,6 +132,41 @@ namespace HouseRentingSystem.Services
             await context.SaveChangesAsync();
         }
 
+        public async Task<HouseDetailsViewModel?> GetDetailsByIdAsync(string houseId)
+        {
+            House? house = await context
+                .Houses
+                .Include(h=>h.Category)
+                .Include(h=>h.Agent)
+                .ThenInclude(a=>a.User)
+                .Where(h=>h.isActive)
+                .FirstOrDefaultAsync(h=>h.Id.ToString()==houseId);
+
+            if (house == null)
+            {
+                return null;
+            }
+
+            return new HouseDetailsViewModel
+            {
+                Id = house.Id.ToString(),
+                Title = house.Title,
+                Address = house.Address,
+                ImageUrl = house.ImageUrl,
+                PricePerMonth= house.PricePerMonth,
+                IsRented = house.RenterId.HasValue,
+                Description = house.Description,
+                Category = house.Category.Name,
+                Agent = new Web.ViewModels.Agent.AgentInfoOnHouseViewModel()
+                {
+                    Email = house.Agent.User.Email,
+                    PhoneNumber = house.Agent.User.PhoneNumber,
+                }
+                
+            };
+
+        }
+
         public async Task<IEnumerable<IndexViewModel>> LastThreeHousesAsync()
         {
 

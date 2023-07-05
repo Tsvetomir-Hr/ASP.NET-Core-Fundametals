@@ -15,5 +15,7 @@
         Task<IEnumerable<HouseAllViewModel>> AllByAgentIdAsync(string agentId);
         Task<IEnumerable<HouseAllViewModel>> AllByUserIdAsync(string userid);
 
+        Task<HouseDetailsViewModel?> GetDetailsByIdAsync(string houseId);
+
     }
 }
