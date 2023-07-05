@@ -87,3 +87,13 @@ D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.W
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Web.Infrastructure.dll
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Services.pdb
 D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Web.Infrastructure.pdb
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\ASP.NET-Core-Fundametals\CSharpWebAdvanced-CourseProject\HouseRentingSystem.Web\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

@@ -44,6 +44,18 @@
 
         }
 
+        public async Task<string?> GetAgentIdByUserIdAsync(string userId)
+        {
+            Agent? agent = await context.Agents
+                .FirstOrDefaultAsync(a => a.UserId.ToString() == userId);
+
+            if (agent == null)
+            {
+                return null;
+            }
+            return agent.Id.ToString();
+        }
+
         public async Task<bool> HasRentsByUserIdAsync(string userId)
         {
             ApplicationUser? user = await context.Users

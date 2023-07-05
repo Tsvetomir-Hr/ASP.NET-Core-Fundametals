@@ -11,5 +11,7 @@
         Task<bool> HasRentsByUserIdAsync(string userId);
 
         Task CreateAsync(string userId, BecomeAgentFormModel model);
+
+        Task<string?> GetAgentIdByUserIdAsync(string userId);
     }
 }
