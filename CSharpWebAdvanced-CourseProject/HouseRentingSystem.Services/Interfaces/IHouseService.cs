@@ -17,9 +17,11 @@
 
         Task<HouseDetailsViewModel> GetDetailsByIdAsync(string houseId);
 
-        Task<bool> ExistById(string houseId);
+        Task<bool> ExistByIdAsync(string houseId);
 
-        Task<HouseFormModel> GetHouseForEditAsync();
+        Task<HouseFormModel> GetHouseForEditAsync(string houseId);
+
+        Task<bool> IsAgentWithIdOwnerOfHouseWithIdAsync(string houseId,string agentId);
 
     }
 }

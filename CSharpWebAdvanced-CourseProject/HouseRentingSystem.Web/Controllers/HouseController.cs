@@ -121,7 +121,7 @@ namespace HouseRentingSystem.Web.Controllers
 
             HouseDetailsViewModel model = await houseService
                 .GetDetailsByIdAsync(id);
-     
+
             return View(model);
         }
 
@@ -144,6 +144,50 @@ namespace HouseRentingSystem.Web.Controllers
 
             return View(myHouses);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(string id)
+        {
+            bool houseExist = await houseService.ExistByIdAsync(id);
+
+            if (!houseExist)
+            {
+                this.TempData[ErrorMessage] = "House with the provided id does not exist!";
+
+                return RedirectToAction("All", "House");
+            }
+
+            bool isUserAgent = await agentService
+                .AgentExistsByUserIdAsync(GetUserId()!);
+            if (!isUserAgent)
+            {
+                this.TempData[ErrorMessage] = "You must become an agent in order to edit house info!";
+
+                return RedirectToAction("Become", "Agent");
+            }
+
+            string? agentId = await agentService.GetAgentIdByUserIdAsync(GetUserId());
+
+            bool isAgentOwner = await houseService
+                .IsAgentWithIdOwnerOfHouseWithIdAsync(id, agentId!);
+            if (!isAgentOwner)
+            {
+                this.TempData[ErrorMessage] = "You must be the agent owner of the house you want to edit!";
+
+                return RedirectToAction("Mine", "House");
+            }
+
+            HouseFormModel formModel = await houseService
+                .GetHouseForEditAsync(id);
+
+            formModel.Categories = await categoryService.AllCategoriesAsync();
+
+            return View(formModel);
+
+        }
+
+       
+
 
     }
 }

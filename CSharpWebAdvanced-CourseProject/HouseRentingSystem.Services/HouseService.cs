@@ -132,7 +132,7 @@ namespace HouseRentingSystem.Services
             await context.SaveChangesAsync();
         }
 
-        public async Task<bool> ExistById(string houseId)
+        public async Task<bool> ExistByIdAsync(string houseId)
         {
             return await context.Houses
                 .Where(h => h.isActive)
@@ -187,6 +187,18 @@ namespace HouseRentingSystem.Services
                 PricePerMonth = house.PricePerMonth,
                 CategoryId = house.CategoryId
             };
+        }
+
+        public async Task<bool> IsAgentWithIdOwnerOfHouseWithIdAsync(string houseId, string agentId)
+        {
+            House house = await context.Houses
+                .Where(h => h.isActive)
+                .FirstAsync(h => h.Id.ToString() == houseId);
+
+            bool result = house.AgentId.ToString() == agentId;
+
+            return result;
+
         }
 
         public async Task<IEnumerable<IndexViewModel>> LastThreeHousesAsync()
