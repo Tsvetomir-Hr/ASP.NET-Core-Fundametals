@@ -25,5 +25,9 @@
 
         Task EditHouseByIdAndFormModel(string houseId, HouseFormModel model);
 
+        Task<HousePreDeleteDetailsViewModel> GetHouseForDeleteByIdAsync(string houseId);
+
+        Task DeleteHouseByIdAsync(string houseId);
+
     }
 }

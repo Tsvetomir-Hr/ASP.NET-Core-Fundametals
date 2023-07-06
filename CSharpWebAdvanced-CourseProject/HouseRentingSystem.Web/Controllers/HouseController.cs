@@ -65,7 +65,7 @@ namespace HouseRentingSystem.Web.Controllers
             }
             catch (Exception)
             {
-                return GeneralEror();
+                return GeneralError();
             }
         }
         [HttpPost]
@@ -140,7 +140,7 @@ namespace HouseRentingSystem.Web.Controllers
             {
 
 
-                return GeneralEror();
+                return GeneralError();
 
             }
         }
@@ -168,7 +168,7 @@ namespace HouseRentingSystem.Web.Controllers
             }
             catch (Exception)
             {
-                return GeneralEror();
+                return GeneralError();
             }
 
         }
@@ -216,7 +216,7 @@ namespace HouseRentingSystem.Web.Controllers
             }
             catch (Exception)
             {
-                return GeneralEror();
+                return GeneralError();
             }
 
         }
@@ -272,13 +272,107 @@ namespace HouseRentingSystem.Web.Controllers
             }
 
             this.TempData[SuccessMessage] = "House was edited successfully!";
+
             return RedirectToAction("Details", "House", new { id });
 
 
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Delete(string id)
+        {
+            bool houseExist = await houseService.ExistByIdAsync(id);
 
-        private IActionResult GeneralEror()
+            if (!houseExist)
+            {
+                this.TempData[ErrorMessage] = "House with the provided id does not exist!";
+
+                return RedirectToAction("All", "House");
+            }
+
+            bool isUserAgent = await agentService
+                .AgentExistsByUserIdAsync(GetUserId()!);
+            if (!isUserAgent)
+            {
+                this.TempData[ErrorMessage] = "You must become an agent in order to edit house info!";
+
+                return RedirectToAction("Become", "Agent");
+            }
+
+            string? agentId = await agentService.GetAgentIdByUserIdAsync(GetUserId()!);
+
+            bool isAgentOwner = await houseService
+                .IsAgentWithIdOwnerOfHouseWithIdAsync(id, agentId!);
+            if (!isAgentOwner)
+            {
+                this.TempData[ErrorMessage] = "You must be the agent owner of the house you want to edit!";
+
+                return RedirectToAction("Mine", "House");
+            }
+
+            try
+            {
+                HousePreDeleteDetailsViewModel model = await houseService.GetHouseForDeleteByIdAsync(id);
+
+
+                return View(model);
+            }
+            catch (Exception)
+            {
+
+                return GeneralError();
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> Delete(string id, HousePreDeleteDetailsViewModel model)
+        {
+            bool houseExist = await houseService.ExistByIdAsync(id);
+
+            if (!houseExist)
+            {
+                this.TempData[ErrorMessage] = "House with the provided id does not exist!";
+
+                return RedirectToAction("All", "House");
+            }
+
+            bool isUserAgent = await agentService
+                .AgentExistsByUserIdAsync(GetUserId()!);
+            if (!isUserAgent)
+            {
+                this.TempData[ErrorMessage] = "You must become an agent in order to edit house info!";
+
+                return RedirectToAction("Become", "Agent");
+            }
+
+            string? agentId = await agentService.GetAgentIdByUserIdAsync(GetUserId()!);
+
+            bool isAgentOwner = await houseService
+                .IsAgentWithIdOwnerOfHouseWithIdAsync(id, agentId!);
+            if (!isAgentOwner)
+            {
+                this.TempData[ErrorMessage] = "You must be the agent owner of the house you want to edit!";
+
+                return RedirectToAction("Mine", "House");
+            }
+
+            try
+            {
+                await houseService.DeleteHouseByIdAsync(id);
+
+                this.TempData[SuccessMessage] = "The house was successfully deleted!";
+
+                return RedirectToAction("Mine", "House");
+            }
+            catch (Exception)
+            {
+
+                return GeneralError();
+            }
+        }
+
+
+
+        private IActionResult GeneralError()
         {
             this.TempData[ErrorMessage] = "Unexpected error occured! Please try again later or contact administrator.";
 
