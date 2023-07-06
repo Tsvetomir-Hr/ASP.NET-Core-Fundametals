@@ -115,7 +115,7 @@ namespace HouseRentingSystem.Services
             return models;
         }
 
-        public async Task CreateAsync(HouseFormModel formModel, string userId)
+        public async Task<string> CreateAsync(HouseFormModel formModel, string userId)
         {
             House house = new House()
             {
@@ -131,6 +131,8 @@ namespace HouseRentingSystem.Services
             await context.Houses.AddAsync(house);
 
             await context.SaveChangesAsync();
+
+            return house.Id.ToString();
         }
 
         public async Task EditHouseByIdAndFormModel(string houseId, HouseFormModel model)
@@ -180,7 +182,7 @@ namespace HouseRentingSystem.Services
                 Agent = new Web.ViewModels.Agent.AgentInfoOnHouseViewModel()
                 {
                     Email = house.Agent.User.Email,
-                    PhoneNumber = house.Agent.User.PhoneNumber,
+                    PhoneNumber = house.Agent.PhoneNumer
                 }
 
             };

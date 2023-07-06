@@ -97,9 +97,9 @@ namespace HouseRentingSystem.Web.Controllers
             {
                 string? agentId = await agentService.GetAgentIdByUserIdAsync(GetUserId()!);
 
-                await this.houseService.CreateAsync(model, agentId!);
+                string id = await this.houseService.CreateAsync(model, agentId!);
 
-                return RedirectToAction("All", "House");
+                return RedirectToAction("Details", "House", new { id });
             }
             catch (Exception _)
             {
@@ -168,7 +168,7 @@ namespace HouseRentingSystem.Web.Controllers
             {
                 return GeneralEror();
             }
-            
+
         }
 
         [HttpGet]

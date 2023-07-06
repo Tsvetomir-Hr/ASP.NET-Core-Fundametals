@@ -8,7 +8,7 @@
     {
         Task<IEnumerable<IndexViewModel>> LastThreeHousesAsync();
 
-        Task CreateAsync(HouseFormModel formmodel, string userId);
+        Task<string> CreateAsync(HouseFormModel formmodel, string userId);
 
         Task<AllHousesFilteredAndPagedServiceModel> AllAsync(AllHousesQueryModel queryModel);
 
