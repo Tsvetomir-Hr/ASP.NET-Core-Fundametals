@@ -23,5 +23,7 @@
 
         Task<bool> IsAgentWithIdOwnerOfHouseWithIdAsync(string houseId,string agentId);
 
+        Task EditHouseByIdAndFormModel(string houseId, HouseFormModel model);
+
     }
 }

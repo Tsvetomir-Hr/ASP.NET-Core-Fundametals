@@ -10,6 +10,7 @@ namespace HouseRentingSystem.Services
     using HouseRentingSystem.Data.Models;
     using HouseRentingSystem.Services.Data.Models.House;
     using HouseRentingSystem.Web.ViewModels.House.Enums;
+    using System.Globalization;
 
     public class HouseService : IHouseService
     {
@@ -128,6 +129,22 @@ namespace HouseRentingSystem.Services
 
             };
             await context.Houses.AddAsync(house);
+
+            await context.SaveChangesAsync();
+        }
+
+        public async Task EditHouseByIdAndFormModel(string houseId, HouseFormModel model)
+        {
+            House house = await context.Houses
+                .Where(h => h.isActive)
+                .FirstAsync(h => h.Id.ToString() == houseId);
+
+            house.Title = model.Title;
+            house.Address = model.Address;
+            house.Description = model.Description;
+            house.ImageUrl = model.ImageUrl;
+            house.PricePerMonth = model.PricePerMonth;
+            house.CategoryId = model.CategoryId;
 
             await context.SaveChangesAsync();
         }
