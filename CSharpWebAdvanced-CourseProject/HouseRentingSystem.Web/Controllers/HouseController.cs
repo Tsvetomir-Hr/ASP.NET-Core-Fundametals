@@ -99,6 +99,8 @@ namespace HouseRentingSystem.Web.Controllers
 
                 string id = await this.houseService.CreateAsync(model, agentId!);
 
+                this.TempData[SuccessMessage] = "House was added successfully!";
+
                 return RedirectToAction("Details", "House", new { id });
             }
             catch (Exception _)
@@ -269,7 +271,9 @@ namespace HouseRentingSystem.Web.Controllers
                 return View(model);
             }
 
+            this.TempData[SuccessMessage] = "House was edited successfully!";
             return RedirectToAction("Details", "House", new { id });
+
 
         }
 
