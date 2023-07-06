@@ -109,14 +109,19 @@ namespace HouseRentingSystem.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Details(string id)
         {
-            HouseDetailsViewModel? model = await houseService
-                .GetDetailsByIdAsync(id);
-            if (model == null)
+            bool houseExist = await houseService.ExistByIdAsync(id);
+
+            if (!houseExist)
             {
                 this.TempData[ErrorMessage] = "House with the provided id does not exist!";
 
                 return RedirectToAction("All", "House");
             }
+
+
+            HouseDetailsViewModel model = await houseService
+                .GetDetailsByIdAsync(id);
+     
             return View(model);
         }
 

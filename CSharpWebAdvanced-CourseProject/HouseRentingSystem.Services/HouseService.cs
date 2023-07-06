@@ -94,12 +94,12 @@ namespace HouseRentingSystem.Services
 
         }
 
-        public async  Task<IEnumerable<HouseAllViewModel>> AllByUserIdAsync(string userid)
+        public async Task<IEnumerable<HouseAllViewModel>> AllByUserIdAsync(string userid)
         {
             IEnumerable<HouseAllViewModel> models = await context
                 .Houses
                 .Where(h => h.RenterId.HasValue &&
-                h.RenterId.ToString() == userid 
+                h.RenterId.ToString() == userid
                 && h.isActive)
                 .Select(h => new HouseAllViewModel()
                 {
@@ -132,20 +132,23 @@ namespace HouseRentingSystem.Services
             await context.SaveChangesAsync();
         }
 
-        public async Task<HouseDetailsViewModel?> GetDetailsByIdAsync(string houseId)
+        public async Task<bool> ExistById(string houseId)
         {
-            House? house = await context
-                .Houses
-                .Include(h=>h.Category)
-                .Include(h=>h.Agent)
-                .ThenInclude(a=>a.User)
-                .Where(h=>h.isActive)
-                .FirstOrDefaultAsync(h=>h.Id.ToString()==houseId);
+            return await context.Houses
+                .Where(h => h.isActive)
+                .AnyAsync(h => h.Id.ToString() == houseId);
+        }
 
-            if (house == null)
-            {
-                return null;
-            }
+        public async Task<HouseDetailsViewModel> GetDetailsByIdAsync(string houseId)
+        {
+            House house = await context
+                .Houses
+                .Include(h => h.Category)
+                .Include(h => h.Agent)
+                .ThenInclude(a => a.User)
+                .Where(h => h.isActive)
+                .FirstAsync(h => h.Id.ToString() == houseId);
+
 
             return new HouseDetailsViewModel
             {
@@ -153,7 +156,7 @@ namespace HouseRentingSystem.Services
                 Title = house.Title,
                 Address = house.Address,
                 ImageUrl = house.ImageUrl,
-                PricePerMonth= house.PricePerMonth,
+                PricePerMonth = house.PricePerMonth,
                 IsRented = house.RenterId.HasValue,
                 Description = house.Description,
                 Category = house.Category.Name,
@@ -162,9 +165,28 @@ namespace HouseRentingSystem.Services
                     Email = house.Agent.User.Email,
                     PhoneNumber = house.Agent.User.PhoneNumber,
                 }
-                
+
             };
 
+        }
+
+        public async Task<HouseFormModel> GetHouseForEditAsync(string houseId)
+        {
+            House? house = await context
+               .Houses
+               .Include(h => h.Category)
+               .Where(h => h.isActive)
+               .FirstAsync(h => h.Id.ToString() == houseId);
+
+            return new HouseFormModel
+            {
+                Title = house.Title,
+                Address = house.Address,
+                Description = house.Description,
+                ImageUrl = house.ImageUrl,
+                PricePerMonth = house.PricePerMonth,
+                CategoryId = house.CategoryId
+            };
         }
 
         public async Task<IEnumerable<IndexViewModel>> LastThreeHousesAsync()
