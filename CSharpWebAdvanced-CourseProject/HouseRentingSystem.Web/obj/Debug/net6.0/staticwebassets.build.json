@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dmTUC4S1bGI4MB9NnGGMawctJpnpaXtcy0RqAqmPOsQ=",
+  "Hash": "bDfQ4+ZRG7ZAJKXV/YwtXthZmLxj2wdCs0uY7ShySzM=",
   "Source": "HouseRentingSystem.Web",
   "BasePath": "_content/HouseRentingSystem.Web",
   "Mode": "Default",
@@ -1086,23 +1086,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
-    },
-    {
-      "Identity": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Web\\wwwroot\\favicon.ico",
-      "SourceId": "HouseRentingSystem.Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Web\\wwwroot\\",
-      "BasePath": "_content/HouseRentingSystem.Web",
-      "RelativePath": "favicon.ico",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
       "Identity": "D:\\ASP.NET-Core-Fundametals\\CSharpWebAdvanced-CourseProject\\HouseRentingSystem.Web\\wwwroot\\js\\jquery-override.js",
