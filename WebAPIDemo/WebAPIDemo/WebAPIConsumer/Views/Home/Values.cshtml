@@ -1,0 +1,27 @@
+﻿<div id="infoWrapper">
+</div>
+<input id="infoParam" />
+<button id="btnGetInfo">Get Info</button>
+
+@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+            $("#btnGetInfo").on('click', function () {
+
+                var param = $("#infoParam").val();
+                $.ajax({
+                    url: "https://localhost:7246/api/Values/GetValue?id=" + param,
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        $("#infoWrapper").html(data);
+                    },
+                    error: function (xhr, status, error) {
+                        $("#infoWrapper").html(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+}
