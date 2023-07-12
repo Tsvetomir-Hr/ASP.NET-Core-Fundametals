@@ -5,6 +5,7 @@ using System.Security.Claims;
 namespace HouseRentingSystem.Web.Controllers
 {
     [Authorize]
+    [AutoValidateAntiforgeryToken]
     public class BaseController : Controller
     {
         protected string? GetUserId()
