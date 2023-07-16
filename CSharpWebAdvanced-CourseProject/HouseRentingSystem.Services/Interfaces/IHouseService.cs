@@ -21,13 +21,22 @@
 
         Task<HouseFormModel> GetHouseForEditAsync(string houseId);
 
-        Task<bool> IsAgentWithIdOwnerOfHouseWithIdAsync(string houseId,string agentId);
+        Task<bool> IsAgentWithIdOwnerOfHouseWithIdAsync(string houseId, string agentId);
 
         Task EditHouseByIdAndFormModel(string houseId, HouseFormModel model);
 
         Task<HousePreDeleteDetailsViewModel> GetHouseForDeleteByIdAsync(string houseId);
 
         Task DeleteHouseByIdAsync(string houseId);
+
+        Task<bool> isRentedByIdAsync(string houseId);
+
+        Task RentHouseAsync(string houseId, string userId);
+
+        Task<bool> IsRenterByUserWithIdAsync(string houseId, string userid);
+
+        Task LeaveHouseAsync(string houseId);
+
 
     }
 }

@@ -35,7 +35,6 @@
 
             
         }
-
         public async Task<bool> ExistByIdAsync(int id)
         {
             return await context.Categories.AnyAsync(c => c.Id == id);

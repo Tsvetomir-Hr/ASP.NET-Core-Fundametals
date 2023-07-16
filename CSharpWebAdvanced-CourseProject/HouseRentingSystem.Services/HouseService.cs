@@ -138,8 +138,8 @@ namespace HouseRentingSystem.Services
         public async Task DeleteHouseByIdAsync(string houseId)
         {
             House houseToDelete = await context.Houses
-                .Where(h=>h.isActive)
-                .FirstAsync(h=>h.Id.ToString()==houseId);
+                .Where(h => h.isActive)
+                .FirstAsync(h => h.Id.ToString() == houseId);
 
             houseToDelete.isActive = false;
 
@@ -245,6 +245,26 @@ namespace HouseRentingSystem.Services
 
         }
 
+        public async Task<bool> isRentedByIdAsync(string houseId)
+        {
+            House house = await context.Houses
+                 .FirstAsync(h => h.Id.ToString() == houseId);
+
+            return house.RenterId.HasValue;
+        }
+
+        public async Task<bool> IsRenterByUserWithIdAsync(string houseId, string userid)
+        {
+           House house = await context.Houses
+                .FirstAsync(h => h.Id.ToString() == houseId);
+
+
+            // checks if he house has renter and check if the renter is current user who will be trying to leave the house.
+            return house.RenterId.HasValue && house.RenterId.ToString()==userid;
+
+             
+        }
+
         public async Task<IEnumerable<IndexViewModel>> LastThreeHousesAsync()
         {
 
@@ -259,6 +279,27 @@ namespace HouseRentingSystem.Services
                     ImageUrl = h.ImageUrl,
                 })
                 .ToArrayAsync();
+        }
+
+        public async Task LeaveHouseAsync(string houseId)
+        {
+            House house = await context.Houses
+                .FirstAsync(h => h.Id.ToString()==houseId);
+
+            house.RenterId = null;
+
+            await context.SaveChangesAsync();   
+
+        }
+
+        public async Task RentHouseAsync(string houseId, string userId)
+        {
+            House house = await context.Houses
+                .FirstAsync(h => h.Id.ToString() == houseId);
+
+            house.RenterId = Guid.Parse(userId);
+
+            await context.SaveChangesAsync();
         }
     }
 }
