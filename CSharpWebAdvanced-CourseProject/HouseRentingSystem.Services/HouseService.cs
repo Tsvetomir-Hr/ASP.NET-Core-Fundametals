@@ -11,6 +11,7 @@ namespace HouseRentingSystem.Services
     using HouseRentingSystem.Services.Data.Models.House;
     using HouseRentingSystem.Web.ViewModels.House.Enums;
     using System.Globalization;
+    using HouseRentingSystem.Services.Data.Models.Statistics;
 
     public class HouseService : IHouseService
     {
@@ -230,6 +231,17 @@ namespace HouseRentingSystem.Services
                 ImageUrl = house.ImageUrl,
                 PricePerMonth = house.PricePerMonth,
                 CategoryId = house.CategoryId
+            };
+        }
+
+        public async Task<StatisticsServiceModel> GetStatisticsAsync()
+        {
+            return new StatisticsServiceModel()
+            {
+                TotalHouses = await context.Houses.CountAsync(),
+                TotalRents = await context.Houses
+                .Where(h=>h.RenterId.HasValue)
+                .CountAsync(),
             };
         }
 

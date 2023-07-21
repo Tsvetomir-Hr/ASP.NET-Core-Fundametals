@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "HouseRentingSystem.Common": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:65332;http://localhost:65337"
+    }
+  }
+}
