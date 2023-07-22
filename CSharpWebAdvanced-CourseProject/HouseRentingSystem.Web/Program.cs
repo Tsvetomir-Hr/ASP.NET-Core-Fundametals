@@ -4,6 +4,7 @@ using HouseRentingSystem.Services;
 using HouseRentingSystem.Services.Interfaces;
 using HouseRentingSystem.Web.Infrastructure.Extensions;
 using HouseRentingSystem.Web.Infrastructure.ModelBinders;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -34,6 +35,7 @@ builder.Services.AddControllersWithViews()
     .AddMvcOptions(options =>
     {
         options.ModelBinderProviders.Insert(0,new DecimalModelBinderProvider());
+        options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
     });
   
 WebApplication app = builder.Build();
